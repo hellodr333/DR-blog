@@ -1,0 +1,48 @@
+/*default*/
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input { margin: 0; padding: 0; border: 0; }
+a{ text-decoration:none;}
+li{ list-style:none; }
+img, input, select, textarea, li{ vertical-align: top; }
+input, select, textarea{outline: none;}
+textarea{resize:none;}
+img, input{border:none;}
+.fl{ float:left;display:inline; }
+.fr{ float:right;display:inline; }
+.clearFix:after{ content:""; display:block; clear:both; }
+.clearFix{zoom:1;}
+.wrapper{width:1200px;margin: 0 auto;}
+*{font-family: "Microsoft YaHei";font-size:16px;}
+
+/*index*/
+.topNav{width:100%;height:50px;background: rgba(0,0,0,0.6);position: fixed;top:0;left: 0;z-index: 10;border-bottom: 1px solid #323132;box-shadow:0 2px 3px rgba(0,0,0,6);}
+.topNav div{height: 100%;}
+.topNav ul{height: 100%;text-align: right;}
+.topNav li{display: inline-block;height: 100%;color: white;height: 50px;line-height: 50px;padding:0 20px;}
+.topNav li a{width: 100%;height: 100%;display: block;color:white;}
+.topNav li.on{background:rgba(0,0,0,0.7);line-height: 48px; }
+.section{position: relative;background: url(../image/2nd.png) repeat;overflow: hidden;text-align: center;}
+
+/*section1*/
+.section1 ul{overflow: hidden;width: 300%;height: 100%;position: relative;}
+.section1 ul li{float:left; text-align: center;font-size: 100px;padding-top: 200px;}
+.section1 ol{position: absolute;left: 50%;margin-left:-105px;bottom:40px;}
+.section1 ol li{width: 50px;height: 40px;float: left;background: red;margin-right: 20px;}
+.section1 ol li.on{background: green;}
+.section1>span{position: absolute;top: 50%;margin-top: -20px;width: 40px;height: 40px;background: blue;}
+.section1>span.left{left: 0;}
+.section1>span.right{right: 0;}
+
+/*section2*/
+.section2{}
+
+
+
+
+
+
+
+
+
+
+
+
