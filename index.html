@@ -1,29 +1,23 @@
 <!doctype html>
-<html>  
+<html style="overflow:hidden">  
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />  <!-- 移动端 -->
-<title>丁蓉的个人网站</title>
-<link rel="stylesheet" type="text/css" href="css/index.css" />
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.min.css" /> 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.js"></script>
-<script type="text/javascript" src='js/index.js'></script>
+<title>Welcome to my  blog!</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
-<div class="topNav">
-	<div class="wrapper" >
-		<ul class="fr" id="nav_list">
-			<li data-menuanchor="page1" class="on"><a href="#page1">About Me</a></li>
-			<li data-menuanchor="page2"><a href="#page2">Baidu.com</a></li>
-			<li data-menuanchor="page3"><a href="#page3">Demo</a></li>
-			<li data-menuanchor="page4"><a href="#page4">WebPages</a></li>
-		</ul>
-	</div>
+<div class="icon" id="icon">
+	<p>
+		<span class="on">About Me</span>
+		<span>Baidu.com</span>
+		<span>Demo</span>
+		<span>Webpage</span>
+	</p>
 </div>
-<div id="fullpage">
-	<div class="section section1" id="section1">
-		<ul id="imgList">
+<ul class="box" id="box"  >
+	<li class="section1">
+		<ul id="imgBody">
 			<li>
 				HTML
 			</li>
@@ -41,55 +35,80 @@
 		</ol>
 		<span class="left" id="prev">&lt;</span>
 		<span class="right" id="next">&gt;</span>
-	</div>
-	<div class="section section2" id="section2">
-		<div></div>
-	</div>
-	<div class="section section3">照片墙等案例</div>
-	<div class="section section4">网页链接</div>
-</div>
-<script type="text/javascript">
-	$(function(){
-		$('#fullpage').fullpage({
-			verticalCentered:false,
-			anchors:['page1','page2','page3','page4'],	
-			slidesNavigation: false	,
-			// afterLoad:function(link,index){
-			// 	switch(index){
-			// 		case 1:
-			// 			move('.ss').scale(1.5).end()
-			// 			move('.ss').set('margin-top','90px').end(function(){
-			// 				move().rotate(360).end()
-			// 			})
-			// 		break;
-			// 		case 2:
-			// 		break;
-			// 		case 3:
-			// 		break;
-			// 		case 4:
-			// 		break;
-					
-			// 	}
-			// },
-			// onLeave:function(link,index){} , //还原初始值
-			// afterRander:function(){}  //页面加载完毕执行 
-
-		})
-
-		$('#nav_list').on('click',function(ev){
-			if (ev.target.tagName == 'A') {
-				$('#nav_list').children().removeClass('on');
-				ev.target.parentNode.className = 'on';
-			}
-		})
-		var index=window.location.hash.match(/\d+/)-1;
-		$('#nav_list').children().eq(index).addClass('on').siblings().removeClass('on');
-
-
-
-
-
-	})
-</script>
+	</li>
+	<li class="section2" id="section2">
+		<div class="baidu">
+			<div class="logo">
+				<a href="javascript:;"></a>
+			</div>
+			<ul class="tab clearfix">
+				<li class="active"><a href="javascript:;">网页</a></li>
+				<li><a href="javascript:;">新闻</a></li>
+				<li><a href="javascript:;">图片</a></li>
+				<li><a href="javascript:;">音乐</a></li>
+				<li><a href="javascript:;">微博</a></li>
+				<li><a href="javascript:;">地图</a></li>
+				<li><a href="javascript:;">问答</a></li>
+				<li><a href="javascript:;">机票</a></li>
+				<li><a href="javascript:;">汽车</a></li>
+				<li><a href="javascript:;">更多&gt;&gt;</a></li>
+			</ul>
+			<div class="search">				
+				<div class="clearfix">
+					<input type="text" class="search_txt fl" placeHolder="运用jsonp实现的跨域 搜看看哦！" id="search_txt" />
+					<input class="search_btn fr" type="submit" value="百度一下" id="search_btn"/>
+				</div>
+				<ul id="searchList">
+					<!-- <li></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="skin">
+			<div class="clearFix">
+				<p class="fl">轻松换肤</p>
+				<div class="fr">添加滚动条</div>
+			</div>
+			<ul class="clearFix" id="skinList">
+				<li><img src="img/skin1.jpg" alt="" width="120"></li>
+				<li><img src="img/skin2.jpg" alt="" width="120"></li>
+				<li><img src="img/skin3.jpg" alt="" width="120"></li>
+				<li><img src="img/skin4.jpg" alt="" width="120"></li>
+				<li><img src="img/skin5.jpg" alt="" width="120"></li>
+			</ul>
+		</div>
+	</li>
+	<li class="section3">
+		<div>
+			<h2>我可以用JS在页面上显示酷炫的效果！</h2>
+			<p>tab选项卡,鼠标拖拽,自定义滚动,瀑布流,延时加载,手风琴,碰撞检测等等.</p>
+			<div>
+				<ul class="clearFix">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</li>
+	<li class="section4">
+		<div class="clearFix">
+			<ul class="fl">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="fr">
+				<h2>业余时间模仿其他网站写的一些网页</h2>
+				<p>文字文字文字</p>
+			</div>
+		</div>
+	</li>
+</ul>
 </body>
 </html>
