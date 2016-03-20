@@ -7,7 +7,6 @@ function getStyle(obj,attr){
 	}
 }
 function move(obj,json,optional){	
-
 	optional=optional||{};
 	optional.time=optional.time || 300;
 	optional.type=optional.type || 'ease-out';
@@ -56,13 +55,13 @@ window.onload=window.onresize=function(){
 	var H=document.documentElement.clientHeight;
 	var oBox=document.getElementById('box');
 	var oIcon=document.getElementById('icon');
-	var aLi=oBox.children;
+	var aSection=oBox.children;
 	var aSpan=oIcon.getElementsByTagName('span');
 	var Now=0;
 
 	oBox.style.height=H*4+'px';
-	for(var i=0;i<aLi.length;i++){
-		aLi[i].style.height=H+'px';
+	for(var i=0;i<aSection.length;i++){
+		aSection[i].style.height=H+'px';
 	}
 	// oIcon.style.top=H/2+'px';	
 	for(var i=0;i<aSpan.length;i++){
@@ -95,7 +94,6 @@ window.onload=window.onresize=function(){
 		}
 	})
 
-
 	//封装滚轮事件
 	function addMouseWheel(obj,fn){
 		if(navigator.userAgent.toLowerCase().indexOf('firefox') != -1){
@@ -121,6 +119,13 @@ window.onload=window.onresize=function(){
 			return false;
 		}	
 	}	
+
+
+
+
+
+
+
 
 	//section1
 	var oW=document.documentElement.clientWidth;
@@ -161,8 +166,6 @@ window.onload=window.onresize=function(){
 			aImgHeadLi[j].className='';
 		}
 		aImgHeadLi[iNow].className='on';
-		// var l=-iNow*oImgList.children[0].offsetWidth;
-		// move1(oImgList,{left:l},{time:300})
 		oImgBody.style.left=-iNow*oImgBody.children[0].offsetWidth+'px';
 	}
 	function next(){
@@ -170,13 +173,73 @@ window.onload=window.onresize=function(){
 		if(iNow==aImgHeadLi.length) iNow=0;
 		tabSection1();
 	}
-	var timer=setInterval(next,1500);
-	oPrev.onmouseover=oNext.onmouseover=function(){
-		clearInterval(timer);
+	// var timer=setInterval(next,2000);
+	// oPrev.onmouseover=oNext.onmouseover=function(){
+	// 	clearInterval(timer);
+	// }
+	// oPrev.onmouseout=oNext.onmouseout=function(){
+	// 	timer=setInterval(next,2000);
+	// }
+
+	var oListOne=document.getElementById('listOne');
+	var oListLi=oListOne.getElementsByTagName('li');
+	for(var i=0;i<oListLi.length;i++){
+		oListLi[i].onmouseover=function(){
+			this.children[1].style.height='200px';
+			this.children[1].style.transition='1s all ease';
+		}
+		oListLi[i].onmouseout=function(){
+			this.children[1].style.height='0px';
+			this.children[1].style.transition='1s all ease';
+		}
 	}
-	oPrev.onmouseout=oNext.onmouseout=function(){
-		timer=setInterval(next,1500);
-	}
+
+	//var oListTwo=document.getElementById('listTwo');
+	// alert(aImgBodyLi[0].offsetWidth)
+	// alert(oImgBody.offsetLeft)
+		var oListTwoTxt=document.getElementById('listTwoTxt');
+		var str="智能社就是前端开发培训,北京最具深度和口碑的JavaScript、HTML5培训，专注于让学员获得快乐的学习体验并找到高薪工作的培训";
+		for(var i=0;i<str.length;i++){
+			var oSpan=document.createElement('span');
+			oSpan.innerHTML=str[i];
+			oListTwoTxt.appendChild(oSpan);
+		}
+		var j=0;
+		var aSpan_list=oListTwoTxt.children;
+		var timer_list=setInterval(function(){	
+				aSpan_list[j].className='active';
+				j++;
+				if(j==str.length){
+					clearInterval(timer_list)
+				}
+		},500)
+
+		// var oElasticUl=document.getElementById('elasticUl');
+		// var aElasticLi=oElasticUl.children;
+		// var speed= 0;
+		// var bottom=200;
+		// function moveElastic(obj,iTarget){
+		// 	clearInterval(obj.timer);
+		// 	var timer=setInterval(function(){
+		// 		speed+=(iTarget-bottom)/5;
+		// 		speed*=0.7;
+		// 		bottom+=speed;
+		// 		obj.style.bottom=Math.round(bottom)+'px';
+		// 		if(obj.style.bottom==iTarget && Math.abs(speed)<1){
+		// 			clearInterval(obj.timer);
+		// 		}
+		// 	},300)
+		// }
+		
+		// for(var a=0;a<aElasticLi.length;a++){
+		// 	aElasticLi[a].onmouseover=function(){
+		// 		moveElastic(this.children[0],0)
+		// 	}
+		// }
+
+
+
+
 
 
 	//section2
@@ -206,20 +269,19 @@ window.onload=window.onresize=function(){
 			//alert(this.index)
 			switch(this.index){
 				case 0:
-				alert(0)
-					oSkinList.style.className='on';
+					oSection2.className='section2 s1'
 					break;
 				case 1:
-					oSection2.style.className='section2 s2'
+					oSection2.className='section2 s2'
 					break;
 				case 2:
-					oSection2.style.className='section2 s3'
+					oSection2.className='section2 s3'
 					break;
 				case 3:
-					oSection2.style.className='section2 s4'
+					oSection2.className='section2 s4'
 					break;
 				case 4:
-					oSection2.style.className='section2 s5'
+					oSection2.className='section2 s5'
 					break;
 			}
 		}
