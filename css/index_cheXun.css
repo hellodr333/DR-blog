@@ -1,0 +1,268 @@
+
+
+/*车讯网*/
+/*清除默认样式*/
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input { margin: 0; padding: 0; border: 0; }
+a{ text-decoration:none;}
+li{ list-style:none; }
+img, input, select, textarea, li{ vertical-align: top; }
+input, select, textarea{outline: none;border:none;}
+textarea{resize:none;}
+img{border:none;}
+.fl{ float:left;display:inline; }
+.fr{ float:right;display:inline; }
+.clearFix:after{ content:""; display:block; clear:both; }
+.clearFix{zoom:1;}
+
+body{color: #666666;font-size: 12px;font-family: "microsoft yahei"}
+.wrapper{width: 960px;margin: 0 auto;}
+a{color: #666666;}
+
+/*header*/
+header{height: 28px;background: url(../img/chexun/header-bg.png) repeat-x;border-top: 1px solid #e4e4e4;border-bottom: 1px solid #e4e4e4;line-height: 28px;}
+.hd_l{margin-left: 10px;}
+.hd_l span{display: inline-block;padding-right: 9px;}
+.hd_l .number{width: 101px;height: 18px;border:1px solid #e4e4e4;margin-top: 4px; background: url(../img/chexun/number-bg.png) repeat-x;padding-left: 4px;}
+.hd_l i{font-style: normal;margin-left: 19px;}
+.hd_l .password{width: 101px;height: 18px;margin-left: 11px;border:1px solid #e4e4e4;margin-top: 4px;background: url(../img/chexun/number-bg.png) repeat-x;padding-left: 4px;}
+.hd_l .login{width: 46px;height: 18px;margin-left: 10px;border:1px solid #e4e4e4;margin-top: 4px;color: #c82a05;background: url(../img/chexun/login-bg.png) repeat-x;font-size: 12px;cursor: pointer;}
+.hd_l .regester{width: 89px;height: 18px;margin-left: 10px;border:1px solid #e4e4e4;margin-top: 4px;background: url(../img/chexun/login-bg.png) repeat-x;font-size: 12px;color: #666666;cursor: pointer;}
+.hd_r{margin-right: 12px;}
+.hd_r a{display: inline-block;font-size: 12px;color: #666666;}
+
+/*banner*/
+.banner{height: 108px;}
+.banner h1{background:url(../img/chexun/logo.jpg) no-repeat;width: 132px;height: 70px;text-indent: -99999em;margin-top: 12px;}
+.banner img{border:1px solid #e4e4e4;margin-top: 10px;}
+
+
+/*nav*/
+nav{height: 68px;background:url(../img/chexun/nav-bg.png) repeat-x; border:1px solid #3365b4;overflow: hidden;}
+nav ul{height: 100%;width:980px; }
+nav li{float:left;width: 248px;background: url(../img/chexun/nav-bg-line.png) no-repeat right;padding-top: 16px;height: 52px;}
+nav li.w260{width: 260px;}
+nav li.w210{width: 210px;}
+nav li a{color: white;}
+nav li h3{margin-left: 22px;width:14px;font-size: 14px;color: #ffc21e; }
+nav li h3.m28{margin-left: 28px;}
+nav li p{margin-bottom: 6px;}
+nav li .cont_r{margin-left: 19px;}
+nav li .cont_r.m15{margin-left: 15px;}
+
+
+
+/*search*/
+.search{margin-top: 10px;height: 186px;border:1px solid #e4e4e4;}
+.search_t{height: 28px;line-height: 28px;background:url(../img/chexun/search-top-bg.png) repeat-x;border-bottom:1px solid #e4e4e4;}
+.search_input span{margin-left: 23px;color: black;}
+.search_input .txt{width: 120px;height: 19px;border:1px solid #c9d8f2;margin-top: 4px;padding-left: 4px;}
+.search_input .searchbtn{width: 43px;height: 19px;border:1px solid #c9d8f2;margin-top: 4px;font-size: 12px;line-height: 19px;color: black;background: #e1ecfe;}
+.search_input select{width: 140px;height: 19px;margin-top: 4px;border:1px solid #c9d8f2;font-size: 12px;color: #666666;padding-left: 5px;}
+.search_txt{color: red;margin-right: 13px;font-size: 12px;}
+.search_txt a{color: black;}
+
+.search_btn {width: 100%;border-bottom:1px solid #e4e4e4;height: 28px;background:url(../img/chexun/search-btn-bg.png) repeat-x;}
+.search_btn span{width: 118px;border:1px solid #e4e4e4;float: left; margin-left: -1px;border-top: none;height: 28px;text-align: center;line-height: 28px;}
+.search_btn span.bordernone{border-right: none;}
+.search_btn span.on{background:url(../img/chexun/search-btn-on-bg.png) repeat-x;color: red;font-weight: bold;border-right: 1px solid #e4e4e4;border-bottom: none;height: 29px;}
+.search_btm ul{width: 100%;height: 128px;background:url(../img/chexun/search-btm-bg.png) repeat-x;}
+.search_btm li{height: 64px;}
+.search_btm li div{float:left;width: 120px;margin-top: 14px;text-align: center;}
+.search_btm li div a{color: #666666;}
+.search_btm li div h5{margin-bottom: 9px;font-weight: normal; }
+.search_btm li div h5.on{color: red;}
+.search_btm li h4{float: left;height: 64px;line-height: 64px;width: 98px;text-align: center;}
+.search_btm li h5.w1{height: 34px;width:1px;background:#e4e4e4;float: left;margin-top: 16px;margin-right: 21px;}
+
+
+.search_btm ul{display: none;}
+.search_btm ul.show{display: block;}
+
+
+
+
+/*contnews*/
+.contnews{height: 450px;margin-top: 9px;}
+.contnews_l{height: 450px;width: 352px;}
+.contnews_l .picnews{height: 280px;border:1px solid #e4e4e4;position: relative;}
+.contnews_l .picnews ul{display: none;}
+.contnews_l .picnews ul.show{display: block;}
+.contnews_l .picnews img{border: 1px solid white;}
+.contnews_l .picnews p{height: 25px;padding-left: 4px;color: black;background: #dbdbdb;line-height: 25px;border:1px solid white;width: 346px;}
+.contnews_l .picnews>div{position: absolute;right: 0;bottom: 3px;}
+.contnews_l .picnews>div span{float: left;width: 14px;height: 18px;background: white;border:1px solid #a9bfcb;margin-right: 3px;text-align: center;line-height: 18px;color: black;}
+.contnews_l .picnews>div span.on{background: red;color: white;}
+
+.vedionews{height: 160px;border:1px solid #e4e4e4;margin-top: 8px;}
+.vedionews h4{width: 100%;height: 30px;background: #e6f3fd;line-height: 30px;color: #0168b7;border-bottom:1px solid #e4e4e4; }
+.vedionews h4 span{float: left;margin-left: 10px;font-size: 14px;}
+.vedionews h4 a{float:right; color: #0168b7;margin-right: 14px;}
+.vedionews ul{width: 100%;margin-left: 10px;margin-top: 8px;}
+.vedionews li{width: 105px;height: 118px;float: left;margin-right: 5px;line-height: 18px;}
+.vedionews li img{border:1px solid #e4e4e4;}
+.vedionews p{padding-left: 5px;padding-right: 5px;text-align: center;color: #666666;}
+
+.contnews_c{width: 360px;height: 100%;border:1px solid #e4e4e4;margin-left: 10px;}
+.contnews_c_top{height: 132px;text-align: center;padding-bottom: 24px;}
+.contnews_c_top a{padding-top: 13px;height: 36px;display: block;}
+.contnews_c_top a h3{font-size: 16px;color: red;}
+.contnews_c_top a.mt25{margin-top: 24px;height: 32px;}
+.contnews_c_top a p{margin-top: 9px;color: #666666;}
+.contnews_c_top{position: relative;}
+.contnews_c_top>i{display: block;background:url(../img/chexun/news-icon.png) no-repeat;width: 49pc;height: 53px;position: absolute;top:-2px;left: -2px;}
+.contnews_pic{width: 320px;height: 94px;border-top: 1px dashed #e4e4e4;padding-top: 22px;margin: 0 auto;}
+.contnews_pic img{float: left;}
+.contnews_pic p{float: right;width: 206px;line-height: 22px;margin-top: -6px;}
+.contnews_pic p span{display: block;font-size: 14px;color: red;}
+.contnews_c_b ul{width: 320px;margin: 0 auto;}
+.contnews_c_b ul li{line-height: 22px;font-size: 13px;padding-left: 12px;background: url(../img/chexun/cont-btm-icon.png) no-repeat 0 8px;}
+.contnews_r{height: 450px;}
+.contnews_r>img{border:1px solid #e4e4e4;}
+.contnews_r>.tit{width: 228px;height: 119px;position: relative;}
+.contnews_r>.tit p{position: absolute;left: 0;bottom: 0;height: 18px;color: white;line-height: 18px;background: rgba(0,0,0,0.5);width: 100%;}
+
+.contnews_list{height: 320px;border:1px solid #e4e4e4;margin-top: 10px;}
+.contnews_list h4{height: 30px;border-bottom:1px solid #e4e4e4;background: #f6f5f5;line-height: 30px;color: #016fc4;background: url(../img/chexun/blue-bg.png) no-repeat;background:url(../img/chexun/tit-bg.png) repeat-x;}
+.contnews_list h4 i{display: inline-block;width: 4px;height: 100%;background: #007bda;float: left;}
+.contnews_list h4 span{float: left;margin-left: 9px;font-size: 14px;}
+.contnews_list h4 a{float: right;color: #016fc4;margin-right: 18px;}
+.contnews_list ul{margin-top: 10px;}
+.contnews_list li{padding-left: 13px;padding-right: 13px;margin-bottom:10px; background: url(../img/chexun/cont-btm-icon.png) no-repeat 0 8px;margin-left: 13px;}
+/*blockandothers*/
+.blockandothers{height: 338px;margin-top: 11px;}
+.block{width: 350px;height: 336px;border:1px solid #e4e4e4; }
+.block h4{width: 100%;height: 30px;background: #e6f3fd;line-height: 30px;color: #0168b7;border-bottom:1px solid #e4e4e4; }
+.block h4 span{float: left;margin-left: 10px;font-size: 14px;}
+.block h4 a{float:right; color: #0168b7;margin-right: 14px;}
+.block_c{width: 316px;height: 94px;margin-top: 14px;margin-left: 18px;margin-bottom: 14px;border-bottom:1px dashed #e4e4e4;  }
+.block_c img{float: left;border:1px solid #e4e4e4; }
+.block_c p{float: right;width: 192px;line-height: 24px;}
+.block_c p a{color: red;}
+.block ul{width: 316px;margin-left: 18px;}
+.block li{padding-left: 8px;margin-bottom:12px; background: url(../img/chexun/cont-btm-icon.png) no-repeat 0 6px;}
+.buycar{width: 360px;height: 336px;border:1px solid #e4e4e4; margin-left: 9px;}
+.buycar h4{width: 100%;height: 30px;background: #e6f3fd;line-height: 30px;color: #0168b7;border-bottom:1px solid #e4e4e4; }
+.buycar h4 p{display: inline-block;margin-right: 14px;float:right;}
+.buycar h4 span{float: left;margin-left: 10px;font-size: 14px;}
+.buycar h4 a{ color: #0168b7;}
+.buycar ul{width: 335px;margin: 0 auto;margin-top: 12px;}
+.buycar ul li{line-height: 23px;font-size: 14px;padding-left: 12px;background: url(../img/chexun/cont-btm-icon.png) no-repeat 0 10px;}
+.newcar{width: 226px;height: 336px;border:1px solid #e4e4e4; }
+.newcar h4{height: 30px;border-bottom:1px solid #e4e4e4;background: #f6f5f5;line-height: 30px;color: #016fc4;background:url(../img/chexun/tit-bg.png) repeat-x;}
+.newcar h4 span{float: left;margin-left: 9px;font-size: 14px;}
+.newcar h4 i{display: inline-block;width: 4px;height: 100%;background: #007bda;float: left;}
+.newcar h4 a{float: right;color: #016fc4;margin-right: 18px;}
+.newcar_pic{width: 196px;margin: 0 auto;height: 79px;border-bottom: 1px dashed #e4e4e4;margin-top: 13px;}
+.newcar_pic h5{font-size: 14px;color: black;height: 25px;}
+.newcar_pic h6{font-size: 12px;height: 23px;}
+.newcar ul{margin-top: 10px;}
+.newcar li{padding-left: 13px;padding-right: 13px;line-height:21px;background: url(../img/chexun/cont-btm-icon.png) no-repeat 0 8px;margin-left: 13px;}
+.banner_pic{height: 90px;margin-top: 10px;margin-bottom: 10px;}
+.navbar{height: 36px;background:url(../img/chexun/nav-bar.jpg) no-repeat; padding-top:12px;}
+.navbar h4{color: white;font-size: 14px;display: inline-block;padding-left: 43px;margin-top: -4px;}
+.navbar p{margin-left: 160px; overflow: hidden;display: inline-block;}
+.navbar p a{color: #164a84;padding-left: 8px;padding-right: 9px;float: left;border-left: 1px solid #164a84;height: 12px;line-height:12px;font-size: 12px;margin-left: -1px;}
+
+/*drive_test*/
+.drive_test{height: 408px;}
+.drive_test_l{width: 352px;height: 100%;}
+.drive_test_l_pic{width: 350px;height: 228px;border:1px solid #e4e4e4;}
+.drive_test_l_compare{width: 350px;height: 164px;border:1px solid #e4e4e4;border-top: 2px solid #164a84;margin-top: 10px;}
+.drive_test_c{width: 359px;height: 100%;margin-left: 10px;}
+.first_select{width: 357px;height: 228px;border:1px solid #e4e4e4;}
+.deep_experience{width: 357px;height: 165px;border:1px solid #e4e4e4;margin-top: 10px;}
+.drive_test_r{width: 228px;height: 404px;border:1px solid #e4e4e4;}
+.drive_test_l_pic p{height: 32px;line-height: 32px;text-align: center;font-size: 14px;color: black;}
+.drive_test_l_compare h4{background:url(../img/chexun/tit-bg.png) repeat-x; }
+.drive_test_l_compare ul{width: 326px;margin:0 auto;}
+.drive_test_l_compare li{height: 12px;margin-bottom: 10px; background: url(../img/chexun/icon-trangle.png) no-repeat 0 7px;font-size: 12px;}
+.drive_test_l_compare li a{float: left;}
+.drive_test_l_compare li span{float: right;}
+.first_select h4{width: 100%;height: 30px;background: #e6f3fd;line-height: 30px;color: #0168b7;border-bottom:1px solid #e4e4e4; }
+.first_select h4 span{float: left;margin-left: 10px;font-size: 14px;}
+.first_select h4 a{ float: right;color: #0168b7;margin-right: 20px;}
+.first_select ul{width: 335px;margin: 0 auto;margin-top: 12px;}
+.first_select ul li{line-height: 23px;font-size: 14px;padding-left: 12px;background: url(../img/chexun/icon-trangle.png) no-repeat 0 10px;}
+.deep_experience h4{width: 100%;height: 30px;background: #e6f3fd;line-height: 30px;color: #0168b7;border-bottom:1px solid #e4e4e4; }
+.deep_experience h4 span{float: left;margin-left: 10px;font-size: 14px;}
+.deep_experience h4 a{ float: right;color: #0168b7;margin-right: 20px;}
+.deep_experience ul{width: 335px;margin: 0 auto;margin-top: 12px;}
+.deep_experience ul li{line-height: 23px;font-size: 14px;padding-left: 12px;background: url(../img/chexun/icon-trangle.png) no-repeat 0 10px;}
+.drive_test_r h4{height: 30px;border-bottom:1px solid #e4e4e4;background: #f6f5f5;line-height: 30px;color: #016fc4;background:url(../img/chexun/tit-bg.png) repeat-x;}
+.drive_test_r h4 span{float: left;margin-left: 9px;font-size: 14px;}
+.drive_test_r h4 i{display: inline-block;width: 4px;height: 100%;background: #007bda;float: left;}
+.drive_test_r h4 a{float: right;color: #016fc4;margin-right: 18px;}
+.list_text span{display: inline-block;width: 13px;height: 12px;border:1px solid #e4e4e4;line-height: 12px;text-align: center;border-radius: 15%;background: #f1f0f4;color: black;margin-right: 10px;}
+.list_text li h6{font-weight:normal;font-size:12px;width: 202px;margin: 0 auto;height: 34px;line-height: 34px;border-bottom: 1px dashed #e4e4e4;}
+.list_text li div{width: 202px;height: 74px;background: #f2f4f8;border-bottom: 1px dashed #e4e4e4;margin: 0 auto;padding-top: 10px;}
+.list_text li div p{width: 95px;margin-left: 8px;float: left;color: #25447b;font-size: 12px;}
+.list_text li div img{float: left;}
+.list_text li div a{color: red;}
+.list_text li div{display: none;}
+.list_text li div.show{display: block;}
+.list_text li h6.on{display: none;}
+
+
+.hot_type_btn{margin-top: -11px;border:1px solid #c9d8f2;height: 28px;line-height: 28px;border-top: none;background:url(../img/chexun/search-btn-bg.png) repeat-x;}
+.hot_type_btn span{height: 28px;padding-left: 10px;padding-right: 10px;}
+.hot_type .carlist{width: 942px;height: 108px;border:1px solid #c9d8f2;border-top: none;padding-left:16px;}
+.hot_type .carlist li{width: 242px;height: 102px;float: left;margin-top: 4px;}
+.hot_type .carlist li.w208{width: 208px;}
+.hot_type .carlist div{width: 110px;height: 102px;background: #eff3fc;}
+.hot_type .carlist div img{margin-left: 5px;margin-top: 6px;}
+.hot_type .carlist div p{height: 12px;margin-top: 5px;text-align: center;}
+.hot_type .carlist h5{height: 90px;margin-left: 17px;padding-top: 12px;}
+.hot_type .carlist h5 a{height: 24px;display: block;font-size: 12px;}
+
+
+.car_other{height: 263px;margin-top: 10px;}
+.carnews{height: 261px;width: 350px;border:1px solid #c9d8f2;}
+.localcar{width: 356px;height: 261px;border:1px solid #c9d8f2;margin-left: 10px;margin-right: 10px;}
+.map{width: 228px;height: 261px;border:1px solid #c9d8f2;}
+.carnews h4{background:url(../img/chexun/tit-bg.png) repeat-x; }
+.carnews h4{height: 30px;border-bottom:1px solid #e4e4e4;background: #f6f5f5;line-height: 30px;color: #016fc4;background:url(../img/chexun/tit-bg.png) repeat-x;}
+.carnews h4 span{float: left;margin-left: 9px;font-size: 14px;}
+.carnews h4 a{float: right;color: #016fc4;margin-right: 18px;}
+.carnews ul{width: 326px;margin:0 auto;padding-top: 14px;}
+.carnews li{height: 24px;background: url(../img/chexun/icon-trangle.png) no-repeat 0 7px;font-size: 12px;padding-left: 13px;}
+
+.localcar h4{background:url(../img/chexun/tit-bg.png) repeat-x; }
+.localcar h4{height: 30px;border-bottom:1px solid #e4e4e4;background: #f6f5f5;line-height: 30px;color: #016fc4;background:url(../img/chexun/tit-bg.png) repeat-x;}
+.localcar h4 span{float: left;margin-left: 9px;font-size: 14px;}
+.localcar h4 a{float: right;color: #016fc4;margin-right: 18px;}
+.localcar ul{width: 326px;margin:0 auto;padding-top: 14px;}
+.localcar li{height: 24px;background: url(../img/chexun/icon-trangle.png) no-repeat 0 7px;font-size: 12px;padding-left: 13px;}
+
+.map h4{height: 30px;border-bottom:1px solid #e4e4e4;background: #f6f5f5;line-height: 30px;color: #016fc4;background:url(../img/chexun/tit-bg.png) repeat-x;}
+.map h4 span{float: left;margin-left: 9px;font-size: 14px;}
+.map h4 i{display: inline-block;width: 4px;height: 100%;background: #007bda;float: left;}
+.map h4 a{float: right;color: #016fc4;margin-right: 18px;}
+
+.link{height: 31px;border:1px solid #e4e4e4;background:url(../img/chexun/link-bg.png) repeat-x;margin-top: 10px;line-height: 31px; }
+.link span{color: #0168b7;font-size: 14px;padding-left: 18px;float: left;}
+.link a{float: right;color: black;margin-right: 16px;}
+
+.website{height: 94px;border:1px solid #e4e4e4;border-top: none;}
+.website div{padding-left: 18px;padding-top: 16px;}
+.website a{height: 24px;float: left;margin-left: 8px;}
+
+.contactus{height: 30px;background: #343f88;color: white;margin-top: 10px;text-align: center;}
+.contactus p{height: 21px;padding-top: 9px;overflow: hidden;display: inline-block;}
+.contactus p span{display: inline-block;padding-left: 17px;padding-right: 17px;border-left: 1px dashed white;margin-left: -1px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

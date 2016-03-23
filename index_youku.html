@@ -1,0 +1,3825 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>优酷</title>
+<link href="css/index_youku.css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+	function tab(id1,id2){
+		var oHeader=document.getElementById(id1);
+		var aHeader=oHeader.children;
+		var oBody=document.getElementById(id2);
+		var aBody=oBody.children;
+		for(var i=0;i<aHeader.length;i++){
+			aHeader[i].index=i;
+			aHeader[i].onclick=function(){
+				for(var j=0;j<aHeader.length;j++){
+					aHeader[j].className="";
+					aBody[j].className=""
+				}
+				this.className="on";
+				aBody[this.index].className='show';
+			}
+		}
+	}
+	tab('personalt','personalb')
+	tab('original','originallist')
+	tab('funspan','funul')
+
+	$(function(){
+		var aHead=$('#tvplay_l').find('span');
+		var aBody=$('#tvplaybtm').find('.tvplay-l-btm');
+		aHead.click(function(){
+			aHead.removeClass('on');
+			aBody.removeClass('show');
+
+			$(this).addClass('on');
+			aBody.eq($(this).index()).addClass('show')
+		})
+
+		var aHead_tv=$('#tvplayrighttop').find('span');
+		var aBody_tv=$('#tvplayrightlist').find('ul');
+		aHead_tv.click(function(){
+			aHead_tv.removeClass('on');
+			aBody_tv.removeClass('show');
+
+			$(this).addClass('on');
+			aBody_tv.eq($(this).index()).addClass('show')
+		})
+
+		var aHead_korea=$('#koreaplay').find('span');
+		var aBody_korea=$('#korea').find('ul');
+		aHead_korea.click(function(){
+			aHead_korea.removeClass('on');
+			aBody_korea.removeClass('show');
+
+			$(this).addClass('on');
+			aBody_korea.eq($(this).index()).addClass('show')
+		})
+
+		var aHead_film=$('#film_l').find('span');
+		var aBody_film=$('#flim_l_btm').find('.film-l-btm-bigpic');
+		aHead_film.click(function(){
+			aHead_film.removeClass('on');
+			aBody_film.removeClass('show');
+
+			$(this).addClass('on');
+			aBody_film.eq($(this).index()).addClass('show')
+		})
+
+		var aHead_filmR=$('#filmright').find('span');
+		var aBody_filmR=$('#filmright').find('ul');
+		aHead_filmR.click(function(){
+			aHead_filmR.removeClass('on');
+			aBody_filmR.removeClass('show');
+
+			$(this).addClass('on');
+			aBody_filmR.eq($(this).index()).addClass('show')
+		})
+
+		var aHead_filmM=$('#memberspan').find('span');
+		var aBody_filmM=$('#member').find('ul');
+		aHead_filmM.click(function(){
+			aHead_filmM.removeClass('on');
+			aBody_filmM.removeClass('show');
+
+			$(this).addClass('on');
+			aBody_filmM.eq($(this).index()).addClass('show')
+		})
+
+		var aHead_filmA=$('#amuse_top').find('span');
+		var aBody_filmA=$('#amuse_btm').find('.amuse-l-btm-bigpic');
+		aHead_filmA.click(function(){
+			aHead_filmA.removeClass('on');
+			aBody_filmA.removeClass('show');
+
+			$(this).addClass('on');
+			aBody_filmA.eq($(this).index()).addClass('show')
+		})
+
+		var aHead_filmAm=$('#amusespan').find('span');
+		var aBody_filmAm=$('#amuse').find('ul');
+		aHead_filmAm.click(function(){
+			aHead_filmAm.removeClass('on');
+			aBody_filmAm.removeClass('show');
+
+			$(this).addClass('on');
+			aBody_filmAm.eq($(this).index()).addClass('show')
+		})
+	})
+}
+
+</script>
+</head>
+<body>
+	<!-- hd -->
+	<div class="wrapper">
+		<div class="header clearFix">
+			<div class="logo fl">
+				<a href="javascript"><h1>优酷</h1></a>
+			</div>
+			<div class="search fl">
+				<input class="search-txt fl" type="text" value="" placeHolder="飞碟说" name="" id="search_txt"/>
+				<input class="search-btn fl" type="button" value="" name="" />
+			</div>
+			<div class="hd-nav fr">
+				<a href="#" class="fl">
+					<span class="upload fl">上传</span>
+					<i class="fl"></i>
+				</a>
+				<a href="#" class="fl">
+					<span class="vip">会员</span>
+				</a>
+				<a href="#" class="fl">
+					<span class="download">APP下载</span>
+				</a>
+				<a href="#" class="fl">
+					<span class="login">登录|</span>
+				</a>
+				<a href="#" class="fl">
+					<span class="register">注册</span>
+				</a>
+			</div>
+		</div>
+		<div class="nav clearFix">
+			<ul class="nav-l fl">
+				<li class="fl"><a class="on" href="#">首页</a></li>
+				<li class="fl"><a href="#">电视剧</a></li>
+				<li class="fl"><a href="#">电影</a></li>
+				<li class="fl"><a href="#">综艺</a></li>
+				<li class="fl"><a href="#">音乐</a></li>
+				<li class="fl"><a href="#">动漫</a></li>
+				<li class="fl"><a href="#">全部</a></li>
+			</ul>
+			<ul class="nav-r fl">
+				<li class="fl"><a href="#">资讯*科技</a></li>
+				<li class="fl"><a href="#">娱乐*搞笑</a></li>
+				<li class="fl"><a href="#">旅游*亲子</a></li>
+			</ul>
+			<span class="fl"><a href="#">排行</a></span>
+			<input class="fr" type="button" value="去个性版" name="" />
+		</div>
+	</div>
+	
+	<!-- banner -->
+	<div class="wrapper banner clearFix">
+		<div class="banner-l fl" id="banner-l-list">
+			<div class="banner-l-t" >			
+				<div class="bigpic fl">
+						<a href="#">
+							<img src="img/youku/banner-bigpic.jpg" alt="大图" width="420" height="240"/>
+							<div class="bigpic-pos">
+								<p>印尼找到失联客机残骸 已发现6具遗体</p>								
+								<div class="clearFix">
+									<div class="fl">
+										<i class="fl">新视点</i>
+										<span class="fl">25.9万</span>
+										<b class="fl">258</b>
+									</div>
+									<strong class="fr"></strong>
+								</div>
+							</div>
+						</a>
+				</div>
+				<ul class="fl">
+					<li>
+						<img width="200" height="110" src="img/youku/banner-2.jpg" alt="小图" />
+						<p class="hide">深圳汽车限购每年十万量</p>
+						<div class="banner-smallpic-pos">	
+						    <b></b>							
+							<div class="banner-small-pos">
+								<a href="#">
+									<h5>解救吴先生 全网首播</h5>
+									<div class="clearFix commt">
+										<span class="fl">人干事！</span>
+										<i class="fr">44.6万</i>
+									</div>
+									<h6>轻松时刻编辑部</h6>
+									<div class="clearFix btn">
+										<input class="play fl" type="button" value="" name="" />
+										<input class="vedioload fr" type="button" value="" name="" />
+									</div>
+								</a>							
+							</div>							
+						</div>				
+					</li>
+					<li>
+						<img width="200" height="110" src="img/youku/banner-2.jpg" alt="小图" />
+						<p class="hide">深圳汽车限购每年十万量</p>
+						<div class="banner-smallpic-pos">	
+						    <b></b>							
+							<div class="banner-small-pos">
+								<a href="#">
+									<h5>解救吴先生 全网首播</h5>
+									<div class="clearFix commt">
+										<span class="fl">人干事！</span>
+										<i class="fr">44.6万</i>
+									</div>
+									<h6>轻松时刻编辑部</h6>
+									<div class="clearFix btn">
+										<input class="play fl" type="button" value="" name="" />
+										<input class="vedioload fr" type="button" value="" name="" />
+									</div>
+								</a>							
+							</div>							
+						</div>				
+					</li>
+				</ul>
+			</div>
+			<div class="banner-l-b">
+				<ul class="clearFix">
+					<li>
+						<img width="200" height="110" src="img/youku/banner-2.jpg" alt="小图" />
+						<p class="hide">深圳汽车限购每年十万量</p>
+						<div class="banner-smallpic-pos">	
+						    <b></b>							
+							<div class="banner-small-pos">
+								<a href="#">
+									<h5>解救吴先生 全网首播</h5>
+									<div class="clearFix commt">
+										<span class="fl">人干事！</span>
+										<i class="fr">44.6万</i>
+									</div>
+									<h6>轻松时刻编辑部</h6>
+									<div class="clearFix btn">
+										<input class="play fl" type="button" value="" name="" />
+										<input class="vedioload fr" type="button" value="" name="" />
+									</div>
+								</a>							
+							</div>							
+						</div>				
+					</li>
+					<li>
+						<img width="200" height="110" src="img/youku/banner-2.jpg" alt="小图" />
+						<p class="hide">深圳汽车限购每年十万量</p>
+						<div class="banner-smallpic-pos">	
+						    <b></b>							
+							<div class="banner-small-pos">
+								<a href="#">
+									<h5>解救吴先生 全网首播</h5>
+									<div class="clearFix commt">
+										<span class="fl">人干事！</span>
+										<i class="fr">44.6万</i>
+									</div>
+									<h6>轻松时刻编辑部</h6>
+									<div class="clearFix btn">
+										<input class="play fl" type="button" value="" name="" />
+										<input class="vedioload fr" type="button" value="" name="" />
+									</div>
+								</a>							
+							</div>							
+						</div>				
+					</li>
+					<li>
+						<img width="200" height="110" src="img/youku/banner-2.jpg" alt="小图" />
+						<p class="hide">深圳汽车限购每年十万量</p>
+						<div class="banner-smallpic-pos">	
+						    <b></b>							
+							<div class="banner-small-pos">
+								<a href="#">
+									<h5>解救吴先生 全网首播</h5>
+									<div class="clearFix commt">
+										<span class="fl">人干事！</span>
+										<i class="fr">44.6万</i>
+									</div>
+									<h6>轻松时刻编辑部</h6>
+									<div class="clearFix btn">
+										<input class="play fl" type="button" value="" name="" />
+										<input class="vedioload fr" type="button" value="" name="" />
+									</div>
+								</a>							
+							</div>							
+						</div>				
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="banner-r fr">
+			<div class="banner-r1">
+				<iframe src="https://daohang.qq.com" frameborder="0" scrolling="no"></iframe>
+			</div>
+			<div class="banner-r2">
+				<iframe src="https://www.taobao.com/" frameborder="0" scrolling="no"></iframe>
+			</div>
+		</div>
+	</div>
+
+	<!-- personal -->
+	<div class="personal wrapper clearFix">
+		<div class="personal-l fl">
+			<div class="personal-l-t clearFix">
+				<h2 class="fl">个人中心</h2>
+				<div class="fl" id="personalt">
+					<span  class="on">猜你喜欢</span>
+					<span>观看记录</span>
+					<span>我的收藏</span>
+					<span>我的订阅</span>
+					<span>会员专享</span>
+				</div>
+			</div>
+			<div class="personal-l-btm" id="personalb">
+				<ul class="show">
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-1.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-1.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-1.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-2.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-2.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-2.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-3.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-3.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-3.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-4.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-4.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-4.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-5.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-5.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/youku/personal-5.jpg" alt="小图" width="200" height="110"/>
+							<span>01:20</span>
+							<div>
+							    <p>白痴玩汽车 坑不死你的 坑不死你的坑不死你的</p>
+								<strong>164,252</strong>								
+								<b>13</b>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="personal-r fr">
+			<div class="personal-r1 fl">
+				<h3>Hi,你好</h3>
+				<p>已看0分钟，击败0%小伙伴</p>
+				<i></i>
+				<h6>登录可以攒时长 领积分哦！</h6>
+				<input type="button" value="马上体验" name="" />
+			</div>
+			<div class="personal-r2 fr">
+				<a href="#">进入个人中心</a>
+			</div>
+		</div>
+	</div>
+
+    <!-- original -->
+    <div class="original wrapper clearFix">
+    	<div class="original-l fl">
+    		<div class="original-l-top">
+    			<div class="clearFix" id="original">
+					<span class="on">最佳原创</span>
+					<span>优酷出品</span>
+				</div>
+				<div id="originallist">
+					<ul class="show">
+						<li class="original-tab">
+							<a href="#">
+								<div class="original-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="original-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="original-tab">
+							<a href="#">
+								<div class="original-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="original-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="original-tab">
+							<a href="#">
+								<div class="original-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="original-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="youku-tab">
+							<a href="#">
+								<img src="img/youku/youku-tab2-1.jpg" alt="小图" width="200" height="110"/>
+								<span>更新至10</span>
+								<div>
+								    <p>怎么面对哥们的火辣女友</p>
+								    <h6>中国留学生的逗逼生活</h6>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="youku-tab">
+							<a href="#">
+								<img src="img/youku/youku-tab2-1.jpg" alt="小图" width="200" height="110"/>
+								<span>更新至10</span>
+								<div>
+								    <p>怎么面对哥们的火辣女友</p>
+								    <h6>中国留学生的逗逼生活</h6>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="youku-tab">
+							<a href="#">
+								<img src="img/youku/youku-tab2-1.jpg" alt="小图" width="200" height="110"/>
+								<span>更新至10</span>
+								<div>
+								    <p>怎么面对哥们的火辣女友</p>
+								    <h6>中国留学生的逗逼生活</h6>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+    		</div>
+    		<div class="original-l-btm">
+    			<iframe src="" frameborder="0" scrolling="no"></iframe>
+    		</div>
+    	</div>
+    	<div class="original-r fl">
+    		<ul>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    		</ul>
+    	</div>
+    </div>
+
+    <!-- tvplay -->
+    <div class="tvplay clearFix wrapper">
+    	<div class="tvplay-l fl">
+    		<div class="tvplay-l-t">
+    			<h2 class="fl">电视剧</h2>
+				<div class="fl" id="tvplay_l">
+					<span class="on">最新</span>
+					<span>韩剧</span>
+					<span>大陆剧</span>
+					<span>英美剧</span>
+					<span>港台剧</span>
+				</div>
+				<a href="#" class="fl">
+					<img src="img/youku/tvplay-banner1.png" width="101" height="22" alt="图片" />
+				</a>
+    		</div>
+    		<div class="tvplaybtm" id="tvplaybtm">
+	    		<div class="tvplay-l-btm show">	
+	    			<div class="tvplay-l-btm-bigpic show">	
+						<div class="tvplay-bigpic fl">
+							<a href="#">
+									<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+									<div class="tvplay-bigpic-pos">
+										<p>鹿鼎记</p>								
+										<div class="clearFix">
+											<i class="fl">七星女大战韦小宝</i>
+											<span class="fr">更新至25</span>
+										</div>
+									</div>
+									<div class="tvplay-bigpic-pos2">	
+								    	<b></b>							
+										<div class="tvplay-bigpic-pos3">
+											<a href="#">
+												<h5>假面</h5>
+												<div class="clearFix commt">
+													<span class="fl">豪门注定得不到幸福！</span>
+													<i class="fr">12集全</i>
+												</div>
+												<h6>1.1亿</h6>
+												<div class="clearFix btn">
+													<input class="play fl" type="button" value="" name="" />
+													<input class="vedioload fr" type="button" value="" name="" />
+												</div>
+											</a>							
+										</div>							
+									</div>		
+							</a>
+						</div>
+						<ul class="fl">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>
+					<div class="tvplay-l-btm-smallpic">
+						<ul class="clearFix">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>				
+				</div>
+				<div class="tvplay-l-btm" >	
+	    			<div class="tvplay-l-btm-bigpic">	
+						<div class="tvplay-bigpic fl">
+							<a href="#">
+									<img src="img/youku/tvplay-banner1.png" alt="大图" width="420" height="240"/>
+									<div class="tvplay-bigpic-pos">
+										<p>鹿鼎记</p>								
+										<div class="clearFix">
+											<i class="fl">七星女大战韦小宝</i>
+											<span class="fr">更新至25</span>
+										</div>
+									</div>
+									<div class="tvplay-bigpic-pos2">	
+								    	<b></b>							
+										<div class="tvplay-bigpic-pos3">
+											<a href="#">
+												<h5>假面</h5>
+												<div class="clearFix commt">
+													<span class="fl">豪门注定得不到幸福！</span>
+													<i class="fr">12集全</i>
+												</div>
+												<h6>1.1亿</h6>
+												<div class="clearFix btn">
+													<input class="play fl" type="button" value="" name="" />
+													<input class="vedioload fr" type="button" value="" name="" />
+												</div>
+											</a>							
+										</div>							
+									</div>		
+							</a>
+						</div>
+						<ul class="fl">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>
+					<div class="tvplay-l-btm-smallpic">
+						<ul class="clearFix">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>				
+				</div>
+				<div class="tvplay-l-btm" >	
+	    			<div class="tvplay-l-btm-bigpic">	
+						<div class="tvplay-bigpic fl" >
+							<a href="#">
+									<img src="img/youku/fun-tab3.jpg" alt="大图" width="420" height="240"/>
+									<div class="tvplay-bigpic-pos">
+										<p>鹿鼎记</p>								
+										<div class="clearFix">
+											<i class="fl">七星女大战韦小宝</i>
+											<span class="fr">更新至25</span>
+										</div>
+									</div>
+									<div class="tvplay-bigpic-pos2">	
+								    	<b></b>							
+										<div class="tvplay-bigpic-pos3">
+											<a href="#">
+												<h5>假面</h5>
+												<div class="clearFix commt">
+													<span class="fl">豪门注定得不到幸福！</span>
+													<i class="fr">12集全</i>
+												</div>
+												<h6>1.1亿</h6>
+												<div class="clearFix btn">
+													<input class="play fl" type="button" value="" name="" />
+													<input class="vedioload fr" type="button" value="" name="" />
+												</div>
+											</a>							
+										</div>							
+									</div>		
+							</a>
+						</div>
+						<ul class="fl">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>
+					<div class="tvplay-l-btm-smallpic">
+						<ul class="clearFix">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>				
+				</div>
+				<div class="tvplay-l-btm" >	
+	    			<div class="tvplay-l-btm-bigpic">	
+						<div class="tvplay-bigpic fl">
+							<a href="#">
+									<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+									<div class="tvplay-bigpic-pos">
+										<p>鹿鼎记</p>								
+										<div class="clearFix">
+											<i class="fl">七星女大战韦小宝</i>
+											<span class="fr">更新至25</span>
+										</div>
+									</div>
+									<div class="tvplay-bigpic-pos2">	
+								    	<b></b>							
+										<div class="tvplay-bigpic-pos3">
+											<a href="#">
+												<h5>假面</h5>
+												<div class="clearFix commt">
+													<span class="fl">豪门注定得不到幸福！</span>
+													<i class="fr">12集全</i>
+												</div>
+												<h6>1.1亿</h6>
+												<div class="clearFix btn">
+													<input class="play fl" type="button" value="" name="" />
+													<input class="vedioload fr" type="button" value="" name="" />
+												</div>
+											</a>							
+										</div>							
+									</div>		
+							</a>
+						</div>
+						<ul class="fl">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>
+					<div class="tvplay-l-btm-smallpic">
+						<ul class="clearFix">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>				
+				</div>
+				<div class="tvplay-l-btm " >	
+	    			<div class="tvplay-l-btm-bigpic">	
+						<div class="tvplay-bigpic fl" >
+							<a href="#">
+									<img src="img/youku/youku-tab2-1.jpg" alt="大图" width="420" height="240"/>
+									<div class="tvplay-bigpic-pos">
+										<p>鹿鼎记</p>								
+										<div class="clearFix">
+											<i class="fl">七星女大战韦小宝</i>
+											<span class="fr">更新至25</span>
+										</div>
+									</div>
+									<div class="tvplay-bigpic-pos2">	
+								    	<b></b>							
+										<div class="tvplay-bigpic-pos3">
+											<a href="#">
+												<h5>假面</h5>
+												<div class="clearFix commt">
+													<span class="fl">豪门注定得不到幸福！</span>
+													<i class="fr">12集全</i>
+												</div>
+												<h6>1.1亿</h6>
+												<div class="clearFix btn">
+													<input class="play fl" type="button" value="" name="" />
+													<input class="vedioload fr" type="button" value="" name="" />
+												</div>
+											</a>							
+										</div>							
+									</div>		
+							</a>
+						</div>
+						<ul class="fl">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>
+					<div class="tvplay-l-btm-smallpic">
+						<ul class="clearFix">
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+							<li>
+								<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+								<div class="tvplay-small-hide">
+									<p>胡仙儿演绎芈月传</p>
+									<h4>[TVB] 醋娘子</h4>
+									<span>20集全</span>
+									<b></b>
+								</div>
+								<div class="tvplay-smallpic-pos">	
+								    <b></b>							
+									<div class="tvplay-pos2">
+										<a href="#">
+											<h5>解救吴先生 全网首播</h5>
+											<div class="clearFix commt">
+												<span class="fl">人干事！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>				
+							</li>
+						</ul>
+					</div>				
+				</div>
+			</div>
+	 	</div>
+    	<div class="tvplay-r fr">
+    		<div class="tvplay-r-top" id="tvplayrightlist">
+    			<div class="clearFix" id="tvplayrighttop">
+    				<span class="on">电视剧排行</span>
+					<span>韩剧</span>
+					<span>大陆</span>
+					<span>香港</span>
+					<span>台湾</span>
+    			</div>
+    			<ul class="show">
+    				<li><i class="red">1</i><b>武媚娘传奇</b></li>
+    				<li><i>6</i><b>武媚娘传奇</b></li>
+    				<li><i class="red">2</i><b>武媚娘传奇</b></li>
+    				<li><i>7</i><b>武媚娘传奇</b></li>
+    				<li><i class="red">3</i><b>武媚娘传奇</b></li>
+    				<li><i>8</i><b>武媚娘传奇</b></li>
+    				<li><i>4</i><b>武媚娘传奇</b></li>
+    				<li><i>9</i><b>武媚娘传奇</b></li>
+    				<li><i>5</i><b>武媚娘传奇</b></li>
+    				<li><i>10</i><b>武媚娘传奇</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">1</i><b>芈月传</b></li>
+    				<li><i>6</i><b>芈月传</b></li>
+    				<li><i class="red">2</i><b>芈月传</b></li>
+    				<li><i>7</i><b>芈月传</b></li>
+    				<li><i class="red">3</i><b>芈月传</b></li>
+    				<li><i>8</i><b>芈月传</b></li>
+    				<li><i>4</i><b>芈月传</b></li>
+    				<li><i>9</i><b>芈月传</b></li>
+    				<li><i>5</i><b>芈月传</b></li>
+    				<li><i>10</i><b>芈月传</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i class="red">10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i class="red">10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i class="red">10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i class="red">10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i class="red">10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i class="red">10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    			</ul>
+    		</div>
+    		<div class="tvplay-r-btm">
+    			<iframe src="" frameborder="0" scrolling="no"></iframe>
+    			<i></i>
+    			<b></b>
+    		</div>
+    	</div>
+    </div>
+
+
+    <!-- korea -->
+    <div class="korea wrapper clearFix">
+    	<div class="korea-l fl">
+    		<h3>韩剧</h3>
+    		<ul class="clearFix" id="korealeft">
+				<li>
+					<img width="200" height="110" src="img/youku/korea.jpg" alt="小图" />
+					 <div class="korea-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+					</div>
+					<div class="korea-l-pos1">	
+							    <b></b>							
+								<div class="korea-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/korea.jpg" alt="小图" />
+					 <div class="korea-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+					</div>
+					<div class="korea-l-pos1">	
+							    <b></b>							
+								<div class="korea-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/korea.jpg" alt="小图" />
+					 <div class="korea-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+					</div>
+					<div class="korea-l-pos1">	
+							    <b></b>							
+								<div class="korea-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>						
+			</ul>
+    	</div>
+    	<div class="korea-r fr" id="korea">
+    			<div class="clearFix" id="koreaplay">
+    				<span class="on">韩剧排行</span>
+					<span>英美剧排行</span>
+    			</div>
+    			<ul class="show">
+    				<li><i class="red">1</i><b>武媚娘传奇</b></li>
+    				<li><i>6</i><b>武媚娘传奇</b></li>
+    				<li><i class="red">2</i><b>武媚娘传奇</b></li>
+    				<li><i>7</i><b>武媚娘传奇</b></li>
+    				<li><i class="red">3</i><b>武媚娘传奇</b></li>
+    				<li><i>8</i><b>武媚娘传奇</b></li>
+    				<li><i>4</i><b>武媚娘传奇</b></li>
+    				<li><i>5</i><b>武媚娘传奇</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">1</i><b>芈月传</b></li>
+    				<li><i>6</i><b>芈月传</b></li>
+    				<li><i class="red">2</i><b>芈月传</b></li>
+    				<li><i>7</i><b>芈月传</b></li>
+    				<li><i class="red">3</i><b>芈月传</b></li>
+    				<li><i>8</i><b>芈月传</b></li>
+    				<li><i>4</i><b>芈月传</b></li>
+    				<li><i>5</i><b>芈月传</b></li>
+    			</ul>
+    	</div>
+    </div>
+
+    <!--film-->
+    <div class="film wrapper clearFix">
+    	<div class="film-l fl">
+    		<div class="film-l-t">
+    			<h2 class="fl">电影*预告片</h2>
+				<div class="fl" id="film_l">
+					<span class="on">最新</span>
+					<span>话语</span>
+					<span>好莱坞</span>
+					<span>预告片</span>
+					<span>女性</span>
+				</div>
+    		</div>
+    		<div class="film-l-btm" id="flim_l_btm" >	
+    			<div class="film-l-btm-bigpic show">	
+					<div class="film-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="film-bigpic-pos">
+									<p>全程直击 十面埋伏</p>								
+									<div class="clearFix">
+										<i class="fl">七星女大战韦小宝</i>
+									</div>
+								</div>
+								<div class="film-bigpic-pos2">	
+							    	<b></b>							
+									<div class="film-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>	
+				<div class="film-l-btm-bigpic">	
+					<div class="film-bigpic fl">
+						<a href="#">
+								<img src="img/youku/banner-2.jpg" alt="大图" width="420" height="240"/>
+								<div class="film-bigpic-pos">
+									<p>全程直击 十面埋伏</p>								
+									<div class="clearFix">
+										<i class="fl">七星女大战韦小宝</i>
+									</div>
+								</div>
+								<div class="film-bigpic-pos2">	
+							    	<b></b>							
+									<div class="film-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>
+				<div class="film-l-btm-bigpic">	
+					<div class="film-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="film-bigpic-pos">
+									<p>全程直击 十面埋伏</p>								
+									<div class="clearFix">
+										<i class="fl">七星女大战韦小宝</i>
+									</div>
+								</div>
+								<div class="film-bigpic-pos2">	
+							    	<b></b>							
+									<div class="film-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>
+				<div class="film-l-btm-bigpic">	
+					<div class="film-bigpic fl">
+						<a href="#">
+								<img src="img/youku/banner-2.jpg" alt="大图" width="420" height="240"/>
+								<div class="film-bigpic-pos">
+									<p>全程直击 十面埋伏</p>								
+									<div class="clearFix">
+										<i class="fl">七星女大战韦小宝</i>
+									</div>
+								</div>
+								<div class="film-bigpic-pos2">	
+							    	<b></b>							
+									<div class="film-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>
+				<div class="film-l-btm-bigpic">	
+					<div class="film-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="film-bigpic-pos">
+									<p>全程直击 十面埋伏</p>								
+									<div class="clearFix">
+										<i class="fl">七星女大战韦小宝</i>
+									</div>
+								</div>
+								<div class="film-bigpic-pos2">	
+							    	<b></b>							
+									<div class="film-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="film-small-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>20集全</span>
+								<b></b>
+							</div>
+							<div class="film-smallpic-pos">	
+							    <b></b>							
+								<div class="film-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+		<div class="film-r fr">
+    		<div class="film-r-top" id="filmright">
+    			<div class="clearFix" id="filmrightspan">
+    				<span class="on">电影排行</span>
+					<span>话语</span>
+					<span>欧美</span>
+					<span>日韩</span>
+					<span>台湾</span>
+    			</div>
+    			<ul class="show">
+    				<li><i class="red">1</i><b>武媚娘传奇</b></li>
+    				<li><i>6</i><b>武媚娘传奇</b></li>
+    				<li><i class="red">2</i><b>武媚娘传奇</b></li>
+    				<li><i>7</i><b>武媚娘传奇</b></li>
+    				<li><i class="red">3</i><b>武媚娘传奇</b></li>
+    				<li><i>8</i><b>武媚娘传奇</b></li>
+    				<li><i>4</i><b>武媚娘传奇</b></li>
+    				<li><i>9</i><b>武媚娘传奇</b></li>
+    				<li><i>5</i><b>武媚娘传奇</b></li>
+    				<li><i>10</i><b>武媚娘传奇</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">1</i><b>芈月传</b></li>
+    				<li><i>6</i><b>芈月传</b></li>
+    				<li><i class="red">2</i><b>芈月传</b></li>
+    				<li><i>7</i><b>芈月传</b></li>
+    				<li><i class="red">3</i><b>芈月传</b></li>
+    				<li><i>8</i><b>芈月传</b></li>
+    				<li><i>4</i><b>芈月传</b></li>
+    				<li><i>9</i><b>芈月传</b></li>
+    				<li><i>5</i><b>芈月传</b></li>
+    				<li><i>10</i><b>芈月传</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i class="red">10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i class="red">10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    				<li><i>10</i><b>美女诞生</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i class="red">10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i class="red">10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    				<li><i>10</i><b>激战</b></li>
+    			</ul>
+    			<ul>
+    				<li><i class="red">10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i class="red">10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i class="red">10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    				<li><i>10</i><b>宫心计</b></li>
+    			</ul>
+    		</div>
+    		<div class="film-r-btm">
+    			<iframe src="" frameborder="0" scrolling="no"></iframe>
+    		</div>
+    	</div>
+    </div>
+
+    <!-- member -->
+    <div class="member wrapper">
+    	<div class="member-l fl" id="member">
+	    	<div class="member-l-t">
+	    			<h2 class="fl">院线*会员</h2>
+					<div class="fl" id="memberspan">
+						<span class="on">热播大片</span>
+						<span >华语精选</span>
+						<span>好莱坞精选</span>
+						<span>2014钢丝节</span>
+						<span>即将上线</span>
+					</div>
+	    	</div>
+	    	<ul class="clearFix show" >
+				<li>
+					<img width="200" height="110" src="img/youku/korea.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/korea.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/korea.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>					
+			</ul>
+			<ul class="clearFix" >
+				<li>
+					<img width="200" height="110" src="img/youku/personal-2.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/personal-2.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/personal-2.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>					
+			</ul>
+			<ul class="clearFix">
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>					
+			</ul>
+			<ul class="clearFix">
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>					
+			</ul>
+			<ul class="clearFix">
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>
+				<li>
+					<img width="200" height="110" src="img/youku/original-r-1.jpg" alt="小图" />
+					 <div class="member-l-hide">
+								<p>胡仙儿演绎芈月传</p>
+								<h4>[TVB] 醋娘子</h4>
+								<b></b>
+					</div>
+					<div class="member-l-pos1">	
+							    <b></b>							
+								<div class="member-l-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+					</div>				
+				</li>					
+			</ul>
+    	</div>
+    	<div class="member-r fr">
+    		<h3>会员活动</h3>
+    		<ul class="clearFix">
+    			<li>
+    				<img src="img/youku/member-r1.png" width="145" height="80" alt="图片" />
+    				<p>优酷会员砸蛋有礼</p>
+    			</li>
+    			<li>
+    				<img src="img/youku/member-r1.png" width="145" height="80" alt="图片" />
+    				<p>优酷会员砸蛋有礼</p>
+    			</li>
+    		</ul>
+    	</div>
+    </div>
+
+    <!-- amuse -->
+    <div class="amuse wrapper">
+    	<div class="amuse-l fl">
+    		<div class="amuse-l-t">
+    			<h2 class="fl">综艺娱乐</h2>
+				<div class="fl" id="amuse_top">
+					<span class="on">热播综艺</span>
+					<span>大陆综艺</span>
+					<span>港台综艺</span>
+					<span>欧美综艺</span>
+					<span>港台综艺</span>
+				</div>
+    		</div>
+    		<div class="amuse-l-btm" id="amuse_btm">	
+    			<div class="amuse-l-btm-bigpic show">	
+					<div class="amuse-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="amuse-bigpic-pos">
+									<p>钟镇涛爆关之琳退出娱乐圈</p>								
+									<div class="clearFix">
+										<i class="fl">我不是明星第5季</i>
+										<span class="fr">9集全</span>
+									</div>
+								</div>
+								<div class="amuse-bigpic-pos2">	
+							    	<b></b>							
+									<div class="amuse-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>	
+				<div class="amuse-l-btm-bigpic">	
+					<div class="amuse-bigpic fl">
+						<a href="#">
+								<img src="img/youku/personal-3.jpg" alt="大图" width="420" height="240"/>
+								<div class="amuse-bigpic-pos">
+									<p>钟镇涛爆关之琳退出娱乐圈</p>								
+									<div class="clearFix">
+										<i class="fl">我不是明星第5季</i>
+										<span class="fr">9集全</span>
+									</div>
+								</div>
+								<div class="amuse-bigpic-pos2">	
+							    	<b></b>							
+									<div class="amuse-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>	
+				<div class="amuse-l-btm-bigpic">	
+					<div class="amuse-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="amuse-bigpic-pos">
+									<p>钟镇涛爆关之琳退出娱乐圈</p>								
+									<div class="clearFix">
+										<i class="fl">我不是明星第5季</i>
+										<span class="fr">9集全</span>
+									</div>
+								</div>
+								<div class="amuse-bigpic-pos2">	
+							    	<b></b>							
+									<div class="amuse-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>	
+				<div class="amuse-l-btm-bigpic">	
+					<div class="amuse-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="amuse-bigpic-pos">
+									<p>钟镇涛爆关之琳退出娱乐圈</p>								
+									<div class="clearFix">
+										<i class="fl">我不是明星第5季</i>
+										<span class="fr">9集全</span>
+									</div>
+								</div>
+								<div class="amuse-bigpic-pos2">	
+							    	<b></b>							
+									<div class="amuse-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>
+				<div class="amuse-l-btm-bigpic">	
+					<div class="amuse-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="amuse-bigpic-pos">
+									<p>钟镇涛爆关之琳退出娱乐圈</p>								
+									<div class="clearFix">
+										<i class="fl">我不是明星第5季</i>
+										<span class="fr">9集全</span>
+									</div>
+								</div>
+								<div class="amuse-bigpic-pos2">	
+							    	<b></b>							
+									<div class="amuse-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>
+				<div class="amuse-l-btm-bigpic">	
+					<div class="amuse-bigpic fl">
+						<a href="#">
+								<img src="img/youku/tvplay-bigpic.jpg" alt="大图" width="420" height="240"/>
+								<div class="amuse-bigpic-pos">
+									<p>钟镇涛爆关之琳退出娱乐圈</p>								
+									<div class="clearFix">
+										<i class="fl">我不是明星第5季</i>
+										<span class="fr">9集全</span>
+									</div>
+								</div>
+								<div class="amuse-bigpic-pos2">	
+							    	<b></b>							
+									<div class="amuse-bigpic-pos3">
+										<a href="#">
+											<h5>假面</h5>
+											<div class="clearFix commt">
+												<span class="fl">豪门注定得不到幸福！</span>
+												<i class="fr">12集全</i>
+											</div>
+											<h6>1.1亿</h6>
+											<div class="clearFix btn">
+												<input class="play fl" type="button" value="" name="" />
+												<input class="vedioload fr" type="button" value="" name="" />
+											</div>
+										</a>							
+									</div>							
+								</div>		
+						</a>
+					</div>
+					<ul class="fl">
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+						<li>
+							<img width="200" height="110" src="img/youku/tvplay-l-smallpic.jpg" alt="小图" />
+							<div class="amuse-small-hide">
+								<p>前锋大仙迎请为美女洗脚</p>
+								<h4>[TVB] 醋娘子</h4>
+								<span>更新至20</span>
+							</div>
+							<div class="amuse-smallpic-pos">	
+							    <b></b>							
+								<div class="amuse-pos2">
+									<a href="#">
+										<h5>解救吴先生 全网首播</h5>
+										<div class="clearFix commt">
+											<span class="fl">人干事！</span>
+											<i class="fr">12集全</i>
+										</div>
+										<h6>1.1亿</h6>
+										<div class="clearFix btn">
+											<input class="play fl" type="button" value="" name="" />
+											<input class="vedioload fr" type="button" value="" name="" />
+										</div>
+									</a>							
+								</div>							
+							</div>				
+						</li>
+					</ul>
+				</div>	
+			</div>
+			<div class="amuse-l-banner">
+					<iframe src="" frameborder="0" scrolling="no"></iframe>
+			</div>	
+	 	</div>
+    	<div class="amuse-r fr">
+    		<div class="amuse-r-top" id="amuse">
+    			<div class="clearFix" id="amusespan">
+    				<span class="on">综艺排行</span>
+					<span>大陆</span>
+					<span>香港</span>
+					<span>台湾</span>
+    			</div>
+    			<ul class="show">
+    				<li>
+    					<i class="red">1</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i class="red">2</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>   				
+    				<li>
+    					<i class="red">3</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>4</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>5</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>6</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>7</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    			</ul>  
+    			<ul>
+    				<li>
+    					<i class="red">1</i>
+    					<b>前锋为女神洗脚</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i class="red">2</i>
+    					<b>前锋为女神洗脚</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>   				
+    				<li>
+    					<i class="red">3</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>4</i>
+    					<b>前锋为女神洗脚</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>5</i>
+    					<b>前锋为女神洗脚</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>6</i>
+    					<b>前锋为女神洗脚</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>7</i>
+    					<b>前锋为女神洗脚</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    			</ul>
+    			<ul>
+    				<li>
+    					<i class="red">1</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i class="red">2</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>   				
+    				<li>
+    					<i class="red">3</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>4</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>5</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>6</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>7</i>
+    					<b>孙杨八块腹肌看身材</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    			</ul>
+    			<ul>
+    				<li>
+    					<i class="red">1</i>
+    					<b>看天天向上很好看</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i class="red">2</i>
+    					<b>看天天向上很好看</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>   				
+    				<li>
+    					<i class="red">3</i>
+    					<b>看天天向上很好看</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>4</i>
+    					<b>看天天向上很好看</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>5</i>
+    					<b>看天天向上很好看</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>6</i>
+    					<b>看天天向上很好看</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    				<li>
+    					<i>7</i>
+    					<b>看天天向上很好看</b>
+    					<span>奔跑吧兄弟2014</span>
+    				</li>
+    			</ul> 			
+    		</div>
+    		<div class="amuse-r-btm">
+    			<iframe src="" frameborder="0" scrolling="no"></iframe>
+    			<i></i>
+    			<b></b>
+    		</div>
+    	</div>
+    </div>
+
+
+    <!-- fun -->
+    <div class="fun wrapper clearFix">
+    	<div class="fun-l fl">
+    		<div class="fun-l-t">
+    			<h2 class="fl">娱乐*搞笑</h2>
+				<div class="fl" id="funspan">
+					<span class="on">娱乐资讯</span>
+					<span>电视资讯</span>
+					<span>电影资讯</span>
+				</div>
+    		</div>
+    		<div class="fun-l-btm" id="funul">
+    			<ul class="show">
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/original-tab1-1.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+				</ul>
+				<ul>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab2.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab2.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab2.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab2.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab2.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+						<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab2.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+						</li>
+				</ul>
+				<ul>
+					<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab3.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+					</li>
+					<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab3.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+					</li>
+					<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab3.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+					</li>
+					<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab3.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+					</li>
+					<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab3.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+					</li>
+					<li class="fun-tab">
+							<a href="#">
+								<div class="fun-tab-top">
+									<i class="fl"></i>
+									<em class="fl">原创精选</em>
+									<span class="fr">89.9万人订阅</span>
+								</div>
+								<img src="img/youku/fun-tab3.jpg" alt="小图" width="200" height="110"/>
+								<span>01:20</span>
+								<div class="fun-tab-btm">
+								    <p>怎么面对哥们的火辣女友</p>
+									<strong>9.7万</strong>								
+									<b>233</b>
+								</div>
+							</a>
+					</li>
+				</ul>
+    		</div>
+    	</div>
+    	<div class="fun-r fr">
+    		<ul>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    			<li class="clearFix">
+    				<a href="#">
+	    				<img class="fl" src="img/youku/original-r-1.jpg" width="90" height="50" alt="图片" />
+	    				<div class="fr">
+	    					<h6>2015不可思议的事情大全</h6>
+	    					<p> <每日一报> </p>
+	    				</div>
+    				</a>
+    			</li>
+    		</ul>
+    	</div>
+    </div>
+
+
+
+    <!-- footer -->
+	<div class="footer wrapper">
+			<div class="footer-t clearFix">
+				<div class="resource fl">
+					<div class="resource-t">
+						<h6>资源</h6>
+						<div class="clearFix">
+							<span>电视剧</span>
+							<span>电影</span>
+							<span>综艺</span>
+							<span>动漫</span>
+							<span>音乐</span>
+							<span>全部</span>
+						</div>
+					</div>
+					<div class="resource-b">
+						<h6>用户</h6>
+						<div class="clearFix">
+							<span>个性化首页</span>
+							<span>优酷认证</span>
+							<span>分享计划</span>
+						</div>
+					</div>
+				</div>
+				<div class="type fl">
+					<h6>分类</h6>
+					<div class="clearFix">
+						<span>出品</span>
+						<span>资讯</span>
+						<span>拍客</span>
+						<span>动漫</span>
+						<span>音乐</span>
+						<span>全部</span>
+						<span>出品</span>
+						<span>资讯</span>
+						<span>拍客</span>
+						<span>动漫</span>
+						<span>音乐</span>
+						<span>全部</span>
+						<span>出品</span>
+						<span>资讯</span>
+						<span>拍客</span>
+						<span>动漫</span>
+						<span>音乐</span>
+					</div>
+				</div>
+				<div class="software fl">
+					<h6>软件</h6>
+					<div class="clearFix">
+						<span>PC客户端</span>
+						<span>优酷Ido</span>
+						<span>手机客户端</span>
+						<span>拍客</span>
+						<span>音乐</span>
+						<span>音乐</span>
+					</div>
+				</div>
+				<div class="support fl">
+					<h6>支持</h6>
+					<div class="clearFix">
+						<p>繁体版</p>
+						<p>在线反馈</p>
+						<p>帮助中心</p>
+					</div>
+				</div>
+				<div class="group fl">
+					<h6>优酷土豆集团</h6>
+						<div class="clearFix">
+							<p>繁体版</p>
+							<p>在线反馈</p>
+							<p>帮助中心</p>
+						</div>
+					</div>
+				<div class="youku fl">
+					<h6>优酷</h6>
+					<div class="clearFix">
+						<p>繁体版</p>
+						<p>在线反馈</p>
+						<p>帮助中心</p>
+					</div>
+				</div>
+				<div class="tudou fl">
+					<h6>土豆</h6>
+					<div class="clearFix">
+						<p>繁体版</p>
+						<p>在线反馈</p>
+						<p>帮助中心</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-c">
+				<div class="footer-c1 fl">
+					<p>经营性网站备案信息</p>
+					<p>中国互联网联盟</p>
+					<p>经营性网站备案信息</p>
+					<p>经营性网站备案信息</p>
+				</div>
+				<div class="footer-c2 fl">
+					<p>经营性网站备案信息</p>
+					<p>中国互联网联盟</p>
+					<p>经营性网站备案信息</p>
+					<p>经营性网站备案信息</p>
+				</div>
+				<div class="footer-c3 fl">
+					<p>经营性网站备案信息</p>
+					<p>中国互联网联盟经营性网站备案信息</p>
+					<p>经营性网站备案信息经营性网站备案信息</p>
+					<p>经营性网站备案信息经营性网站备案信息</p>
+				</div>
+				<div class="footer-c4 fl">
+					<img class="fl" src="img/youku/app.jpg" alt="logo" />
+					<div class="fl">
+						<h5>优酷App</h5>
+						<p>扫描或点击下载</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-b">
+				<p>请仔细阅读优酷使用协议请仔细阅读优酷使用协议请仔细阅读优酷使用协议请仔细阅读优酷使用协议</p>
+			</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input { margin: 0; padding: 0; border: 0; }
+a{ text-decoration:none;}
+li{ list-style:none; }
+img,input,select,textarea,li{ vertical-align: top; }
+input,select,textarea{outline: none;}
+textarea{resize:none;}
+img{border:none;}
+.fl{ float:left;display:inline; }
+.fr{ float:right;display:inline; }
+.clearFix:after{ content:""; display:block; clear:both; }
+.clearFix{zoom:1;}
+body{font-size:12px;color:#666666;font-family:"Microsoft YaHei";}
+.wrapper10{width:980px;margin:0 auto;}
+a{color:#999;}
+.wrapper1{width:980px;margin:0 auto;}
+.wb-wrapper{ width:1200px; margin:0 auto;}
+.wb-box{ color:#999; font-size:14px; font-family:"\5FAE\8F6F\96C5\9ED1";}
+.wb-box a{color:#999;}
+.wb-box a:hover{color:#f00;}
+.wb-footer a:hover{color:#f00;}
+.wb-footer a{color:#3e4545; font-size:12px;}
+.wft{width:1200px;margin:0 auto;}
+.kh-wrapper{width:980px; margin:0 auto;}
+.w950{width:950px; margin:0 auto;}
+/**/
+.wrapper{width:1108px;margin:0 auto;overflow:hidden}
+
+.wrapper1{width:980px;margin:0 auto;}
+.kh-wrapper{width:980px; margin:0 auto;}
+.w950{width:950px; margin:0 auto;}
+.wrapper10{width:980px;margin:0 auto;}
+/**/
+.wrapper{width:1108px;margin:0 auto;overflow:hidden}
+body{font-family:"微软雅黑";font-size:12px;color:#999999;}
+a{color:#999;}
+
+/*通用头部*/
+.headerh{height:20px;border:1px solid #dfdfdf;padding-top:10px;background:#f5f5f5;}
+.headerh span{background:url(../img/meituan/1111.png) no-repeat;width:13px;height:12px;float:left;margin-top:5px;}
+.headerh em{color:#f76120;font-style:normal;}
+.headerh i{background:url(../img/meituan/1113.png) no-repeat;width:10px;height:16px;float:left;margin-top:-1px;}
+.headerh b{background:url(../img/meituan/1112.png) no-repeat;width:6px;height:3px;float:right;margin-top:8px;}
+.headerh ul{overflow:hidden;margin-top:-4px;}
+.headerh li{padding:0 12px;float:left;border-left:1px solid #666;margin-left:-1px;height:16px;}
+.headerh .my{border-left:none;}
+.ttop{height:92px;padding-top:20px;}
+.ttop h1{background:url(../img/meituan/base.vdd88fa40.png) no-repeat 0 -78px;width:82px;height:54px;float:left;}
+.ttop .sear{height:70px;float:left;margin-left:96px;}
+.ttop .sear .a1{float:left;margin-right:15px;}
+.ttop .sear .sbox{width:492px;height:40px;border:3px solid #2db8ad;}
+.ttop b{background:url(../img/meituan/1112.png) no-repeat;width:6px;height:3px;float:right;margin-top:20px;margin-right:20px;}
+.ttop .sear .sbox .tg{width:62px;height:40px;background-color:#fafafa;text-align:center;line-height:40px;}
+.tg i{background:url(../img/meituan/1112.png) no-repeat;width:6px;height:3px;float:right;margin-top:20px;}
+.ttop .sear .in{width:350px;height:40px;border:none;}
+.ttop .sear .s1{width:80px;height:40px;background:#2db8ad;color:#FFF;line-height:40px;text-align:center;border:none;cursor:pointer;}
+.ttop span{background:url(../img/meituan/base.vdd88fa40.png) no-repeat -11px -30px;width:34px;height:42px;float:left;margin:0 20px 0 20px;}
+.ttop em{background:url(../img/meituan/base.vdd88fa40.png) no-repeat -75px -30px;width:60px;height:42px;float:left;margin-right:24px;}
+.ttop strong{background:url(../img/meituan/base.vdd88fa40.png) no-repeat -161px -30px;width:36px;height:42px;float:left;}
+.cont{width:978px;height:562px;border:1px solid #eee;margin-top:10px}
+.cont_hd{border-bottom:1px solid #eee;height:36px;margin-top:34px;}
+
+.ttop span{background:url(../img/meituan/base.vdd88fa40.png) no-repeat -11px -30px;width:34px;height:42px;float:left;margin-right:28px;}
+.ttop em{background:url(../img/meituan/base.vdd88fa40.png) no-repeat -75px -30px;width:60px;height:42px;float:left;margin-right:28px;}
+.ttop strong{background:url(../img/meituan/base.vdd88fa40.png) no-repeat -161px -30px;width:36px;height:42px;float:left;margin-right:28px;}
+.nnav{width:980px;height:40px;border-bottom:2px solid #2bb8aa;}
+.nnav .nbox{width:198px;height:40px;background:#2bb8aa;color:#fff;line-height:40px;font-size:14px;padding-left:17px;float:left;}
+.nnav ul{margin-left:15px;}
+.nnav li{padding:0 15px;float:left;margin-top:10px;}
+.nnav li .a2{font-size:14px;color:#000;font-weight:bold;}
+.nnav li i{background:url(../img/meituan/1114.png) no-repeat;width:16px;height:16px;float:left;margin-top:2px;}
+.bbanner{height:478px;}
+.bbanner .bbl{width:980px;height:480px;}
+.bbanner .sidebar{width:191px;height:484px;border:2px solid #2bb6aa;margin-top:-2px;padding:0 10px;}
+.bbanner .sidebar li{border-bottom:1px solid #eee;padding-bottom:30px;padding-top:12px;}
+.bbanner .sidebar h6{font-size:14px;color:#000;float:left;}
+.bbanner .sidebar .a3{float:left;margin-right:7px;line-height:30px;}
+.bbanner .sidebar .a4{width:58px;height:18px;color:#2bb8aa;color:#fff;line-height:18px;text-align:center;background:#2bb8aa;margin-left:5px;}
+.bbanner .bbl .ban{width:765px;height:486px;float:left;}
+.bbanner .bbl .ban .sel{width:735px;height:149px;padding:0 15px;}
+.bbanner .bbl .ban .sel ul{height:36px;border-bottom:1px solid #ededed;padding-top:12px;}
+.bbanner .bbl .ban .sel ul li{float:left;padding:0 11px;}
+.bbanner .bbl .ban .sel ul li i{background:url(../img/meituan/1115.png) no-repeat;width:12px;height:12px;float:left;margin-top:4px;}
+.bbanner .bbl .ban .lb{width:735px;height:307px;padding:0 15px;}
+.bbanner .bbl .ban .lb .he i{background:url(../img/meituan/1116.png) no-repeat;width:14px;height:14px;float:left;margin-top:2px;margin-right:5px;}
+.bbanner .bbl .ban .lb .btn{width:200px;height:10px;margin-top:15px;}
+.bbanner .bbl .ban .lb span{width:10px;height:10px;background:#cccccc;border-radio:50%;float:right;margin-left:10px;}
+
+.cont{width:978px;height:560px;border:1px solid #eee}
+.cont1{width:852px;margin:0 auto}
+.cont_hd{border-bottom:1px solid #eee;}
+.cont_hd1{width:156px;height:35px;border:1px solid #eee;background:#e9f6f6;line-height:35px;text-align:center;margin-right:7px;color:#2bb8aa}
+.cont_hd1 img{margin:12px 7px 0 40px}
+
+.cont_hd2{width:156px;height:35px;border:1px solid #eee;background:#e9f6f6;line-height:35px;text-align:center;color:#2bb8aa;margin-bottom:28px}
+.cont_hd2 img{margin:10px 7px 0 40px}
+.cont_hd .on{background:#1aa29e;color:#fff;position:relative}
+.on i{background:url(../img/meituan/land_bg13.png) no-repeat;width:10px;height:6px;position:absolute;bottom:-6px;left:50%;}
+.cont_hd3{margin-top:14px;}
+.cont_hd3 span{color:#000}
+.cont_hd3 a{color:#2bb8aa}
+
+/**/
+/*top*/
+
+.fixed-pos img{position: fixed;top:200px;right: 60px;}
+.fixed-pos i{position: fixed;top:310px;right: 73px;width: 9px;height: 9px;cursor: pointer; }
+.top{height: 580px;}
+.nav-small{height: 38px;border-bottom:1px solid #eeeeee;}
+.nav-small span{color:#2bb8aa;line-height: 38px;display: line-block;height: 38px;}
+.nav-small span.black{color:black;}
+.topic{height: 86px;}
+.topic h2{font-size: 27px;margin-top: 13px;margin-bottom: 12px;color: black;margin-left: -14px;}
+.topic h3{font-size: 16px;}
+.details-l{width: 490px;height: 454px;}
+.details-l-pos{width:460px;height: 280px;position: relative;}
+.details-l-pos img{position: absolute;left: 0;top: 0;}
+.details-l-pos i, .details-l-pos b, .details-l-pos span{position: absolute;width: 43px;height: 40px;left: 0;}
+.details-l-pos i{background: url(../img/meituan/icon-list1.png) no-repeat 0 -294px;margin-left: 10px;top:-3px;}
+.details-l-pos b{background: url(../img/meituan/icon-list1.png) no-repeat 0 -168px;margin-left: 50px;top:-3px;}
+.details-l-pos span{background: url(../img/meituan/icon-list1.png) no-repeat 0 -252px;margin-left: 90px;top:-3px;}
+.details-l .small-pic{border:3px solid #f76120;margin-top: 14px;}
+
+.details-r{width: 490px;height: 454px;}
+.details-r .price{width: 490px;height: 53px;border-bottom: 1px solid #eeeeee;}
+.details-r .price .price-l{margin-top: 10px;color: #f76120;}
+.details-r .price span{color: #f76120;margin-right: 9px;font-size: 12px;}
+.details-r .price i{font-style: normal;font-size: 25px;font-weight: bold;}
+.details-r .price .price-r{margin-top: 7px;color: #f76120;margin-left: 9px;}
+.details-r .price h6{font-size: 16px;}
+.details-r .price p{text-decoration: line-through;}
+
+.details-r .sell{height: 38px;border-bottom:1px solid #eeeeee;line-height: 38px;}
+.sell-l{margin-left: 1px;}
+.sell-l i{color: #f76120;font-style: normal;}
+.sell-r{margin-left: 140px;}
+.sell-r a{display: inline-block;background:url(../img/meituan/doubt-icon.png) no-repeat ;width: 14px;height: 16px;margin-left: 11px; }
+
+.seller{height: 104px;border-bottom: 1px solid #eeeeee;}
+.seller-l{width: 325px;}
+.seller-l ul{margin-top: 19px;}
+.seller-l li{margin-bottom: 16px;overflow: hidden;}
+.seller-l h6{float:left;width: 70px;}
+.seller-l p{display: inline-block;}
+.seller-l span{color: #f76120;margin-left: 5px;}
+.seller-l a{color: #666666;}
+.seller-r i{display: block;background:url(../img/meituan/coupon.png) no-repeat ;width: 164px;height: 39px; }
+
+.buydetails{height: 187px;border-bottom: 1px solid #eeeeee;}
+.buydetails-t{height: 29px;line-height:29px;margin-top: 20px;margin-bottom: 19px;}
+.buydetails-t h5{float:left;width: 70px;}
+.buydetails-t div{float:left;text-align: center;line-height: 27px;margin-right: 10px;}
+.buydetails-t span{display:inline-block;border:1px solid #d2d2d2;width: 84px;height: 27px;}
+.buydetails-t span.w95h27{width: 95px;}
+.buydetails-t span.w95h27:hover{border:2px solid #ff8900;background: url(../img/meituan/icon222.png) no-repeat 85px 17px;}
+.buydetails-t span.w84h27:hover{border:2px solid #ff8900;background: url(../img/meituan/icon222.png) no-repeat 74px 17px;}
+
+.buydetails-c{height: 34px;line-height:34px;}
+.buydetails-c h5{float:left;width: 70px;}
+.buydetails-c div{float:left;}
+.buydetails-c input{float:left;width: 28px;height: 34px;border:1px solid #d2d2d2;font-size: 18px;cursor:pointer;}
+.buydetails-c span{float:left;width: 40px;height: 32px;border:1px solid #d2d2d2;border-left: none;border-right:none;text-align: center;}
+
+.buydetails-b{margin-top: 20px;height: 65px;}
+.buydetails-b .buynow{background:url(../img/meituan/buynow.png) no-repeat ;width: 169px;height: 50px;cursor: pointer;}
+.buydetails-b .putin{background:url(../img/meituan/putin.png) no-repeat ;width: 129px;height: 50px;margin-left: 10px;margin-right: 18px;cursor: pointer;}
+.buydetails-b b{padding-top: 20px;padding-left: 14px;display: inline-block;background:url(../img/meituan/collect-icon.png) no-repeat 0 21px;width: 44px;height: 13px;cursor: pointer;}
+.buydetails-b .share{padding-top: 20px;padding-left: 14px;display: inline-block;background:url(../img/meituan/share-icon.png) no-repeat 0 20px;width: 36px;height: 13px;}
+
+.service{padding-top: 16px;}
+.service i{float:left;width: 73px;height: 15px;font-style: normal;}
+.service div{width: 96px;float:left;height: 15px;}
+.service span{width: 50px;height: 15px;padding-left: 23px;display: inline-block;}
+.service .anyime{background:url(../img/meituan/service-icon.png) no-repeat;}
+.overtime, .hurry, .truecomment{background:url(../img/meituan/service-icon.png) no-repeat;}
+
+
+/*cont*/
+.cont{padding-top: 38px;height: 6407px;}
+.cont-l{width: 702px;}
+.otherproduct{border-top:1px solid #eeeeee; }
+.otherproduct-t{height: 56px;border-bottom: 2px solid #babdc2;color: black;}
+.otherproduct-t h3{font-size: 17px;margin-top: 26px;width: 465px;}
+.otherproduct-t span{font-size: 14px;margin-top: 30px;}
+.otherproduct-t i{margin-left: 60px;margin-right: 52px;font-size: 14px;margin-top: 30px;font-style: normal;}
+.otherproduct-t b{font-size: 14px;margin-top: 30px;font-weight: normal;}
+.otherproduct-b{margin-top: 14px;}
+.otherproduct-b h3{font-size: 14px;width: 465px;}
+.otherproduct-b span{width: 108px;}
+.otherproduct-b i{width: 108px;font-style: normal;}
+.otherproduct-b b{font-weight: normal;}
+
+.cont-l-nav{height: 39px;width:700px;border:1px solid #dddddd;margin-top: 60px;margin-bottom: 40px;overflow: hidden;}
+.cont-l-nav div{margin-left:1px;width: 702px;}
+.cont-l-nav span{float:left;height:41px;width: 139px;border-left:1px solid #eeeeee;border-right:1px solid #eeeeee;background: #f5f5f5;margin-left: -1px;text-align: center;line-height: 41px;}
+.cont-l-nav span.on{background: #23beb1;border-left:1px solid #23beb1;border-right:1px solid #23beb1;height: 43px;margin-top:-2px;color:white;position: relative;}
+
+.position{height: 326px;}
+.position h2{height: 31px;border-bottom: 2px solid #888888;font-size: 16px;}
+.position-cont{margin-top: 20px;background: #fafafa;height: 294px;}
+.position-l{margin-left: 15px;border: 1px solid #eeeeee;width:310px;height: 250px;position: relative; }
+.position-l iframe{width:310px;height: 220px;background: #eee;position: absolute;left: 0;top: 0;}
+.position-l a{color:#666666;position: absolute;left: 0;top:220px;height: 30px;line-height: 30px;text-align: center;width: 310px; }
+.position-r{padding-top: 12px;padding-left: 30px;width: 278px;}
+.position-r h3{color:#40beb2;font-size: 14px;}
+.position-r h4{margin-top: 19px;margin-bottom: 14px;}
+.position-r h5{height: 60px;width: 35px;}
+.complict div{width: 242px;}
+.complict div>div{margin-top: 12px;}
+.complict div a{color: #40beb2;}
+.position-r h6{margin-bottom: 12px;margin-top: 12px;}
+.position-r span{color: #666666;}
+
+.known{height: 524px;padding-top: 36px;}
+.known h2{height: 31px;font-size: 17px;border-bottom: 2px solid #888888;}
+.known ul li{width: 702px;border-bottom: 1px solid #eeeeee;overflow: hidden;}
+.known ul li h5{float: left;padding-left: 10px;width: 150px;font-size: 14px;height: 40px;line-height: 40px;background: #f9f9f9;border-right:1px solid #eeeeee;}
+.known ul li p{float: left;padding-left: 10px;width: 530px;font-size: 14px;height: 40px;line-height: 40px;}
+.known ul li.manyrow{height:135px; }
+.known ul li.manyrow h5{height:135px; }
+
+.orderdetails h2{padding-top: 36px;font-size: 18px;height: 32px;border-bottom:2px solid #888888;}
+.orderdetails h3{line-height:36px;height: 36px;margin-top: 10px;margin-bottom: 10px;padding-left: 6px;border-left: 4px solid #2bb8aa;width: 692px;background: #eeeeee;}
+.ordercont li{overflow: hidden;width: 702px;overflow: hidden;height: 38px;border-bottom: 1px dashed #f0f0f0;}
+.ordercont li h4, .ordercont li h5, .ordercont li h6, .ordercont li p, .ordercont li span{float:left;}
+.ordercont .bg{background: #f0f0f0;}
+.ordercont h4{font-size: 14px;line-height: 38px;text-indent: 10px;width: 163px;}
+.ordercont h5{font-size: 14px;line-height: 38px;width: 260px;}
+.ordercont h6{font-size: 14px;line-height: 38px;width: 80px;}
+.ordercont p{font-size: 14px;line-height: 38px;width: 80px;}
+.ordercont span{font-size: 14px;line-height: 38px;width: 80px;}
+.orderdetails>div{height: 46px;border-top: 1px solid #f0f0f0;margin-top: -1px;line-height: 46px;}
+
+.recomand h2{height: 36px;margin-top: 10px;margin-bottom: 10px;padding-left: 6px;border-left: 4px solid #2bb8aa;width: 692px;background: #eeeeee;}
+.recomand p{height: 58px;line-height: 58px;}
+.introduce h2{padding-top: 36px;font-size: 18px;height: 32px;border-bottom:2px solid #888888;}
+.introduce h3{line-height:36px;height: 36px;margin-top: 10px;margin-bottom: 10px;padding-left: 6px;border-left: 4px solid #2bb8aa;width: 692px;background: #eeeeee;}
+.introduce p{height: 70px;padding-top: 19px;line-height: 23px;font-size: 14px;}
+.introduce img{margin-bottom: 5px;}
+
+/*cont-r*/
+
+.download-app{width: 238px;height: 225px;border: 1px solid #e8e8e8;}
+.download-app .pos1, .download-app .pos2{width: 208px;height: 77px;margin-top:36px; margin-left:16px;border-bottom: 1px dashed #e8e8e8;}
+.download-app .noborder{border-bottom: none;}
+.download-app img{margin-right: 17px;}
+.download-app input{margin-top: 8px;}
+.freeload-top{width: 89px;height:23px;background:url(../img/meituan/meituan-bar.png) no-repeat;color: white;text-indent: -2em;cursor:pointer;}
+.freeload-btm{width: 89px;height:23px;background:url(../img/meituan/maoyan-bar.png) no-repeat;color: white;text-indent: -2em;cursor:pointer;}
+.download-app p{font-size: 17px;}
+
+.hottopic{width: 238px;height: 180px;border: 1px solid #e8e8e8;margin:10px 0;}
+.hottopic-t h6{float: left;height: 39px;line-height: 39px;font-size: 14px;margin-left: 15px;}
+.hottopic-t .btn{float: right;margin-top: 10px;margin-right: 10px;}
+.hottopic-t .btn a{width: 13px;height: 13px;border: 1px solid #e8e8e8;float:left;margin-left: -1px;text-align: center;line-height: 13px;}
+.pic-pos img{border-top: 1px solid #f5e3e6;position: absolute;left: 0;top: 0;}
+.pic-pos a{color: #666666;}
+.pic-pos{position: relative;width: 237px;height: 139px;}
+.pic-pos p{position: absolute;left: 19px;top: 23px;}
+.pic-pos h5{position: absolute;left: 19px;top: 42px;font-size: 16px;}
+.pic-pos h6{position: absolute;left: 6px;top: 71px;width: 77px;height: 23px;background: url(../img/meituan/hot-topic-icon.png) no-repeat;color:white;text-indent: 4px;font-size: 12px;line-height: 23px;}
+
+.answer{width: 223px;height: 98px;border: 1px solid #e8e8e8;font-size:14px;padding-left: 15px;}
+.answer a{color: #666666;}
+.answer h4{margin-top: 25px; margin-bottom: 20px;}
+.answer span{padding-left: 18px;background: url(../img/meituan/answer-icon.png) no-repeat;width: 59px;height: 15px;color: #2bb8aa;}
+.answer i{font-style: normal;color: #2bb8aa;}
+
+.otherfood{height: 1873px;width:223px; border: 1px solid #e8e8e8;margin:10px 0;padding-left: 15px;}
+.otherfood h3{padding-top: 25px;height: 28px;}
+.otherfood li{width: 208px;height: 208px;border-bottom: 1px dashed #e8e8e8;position: relative;margin-bottom: 20px;}
+.otherfood li a{color: #666666;}
+.otherfood li.bordernone{border-bottom: none;}
+.otherfood img{position: absolute;left: 0;top: 0;}
+.otherfood .txt-pos{position: absolute;left: 0;top: 116px;}
+.otherfood .txt-pos p{line-height:18px;}
+.otherfood .txt-pos div{margin-top: 5px;}
+.otherfood .txt-pos span{color: #f76120;float: left;margin-right: 10px;}
+.otherfood .txt-pos i{padding-top: 2px;font-style: normal;float: left;}
+.otherfood .txt-pos b{text-decoration: line-through;float: left;}
+.otherfood .txt-pos em{float: right;font-style: normal;margin-right:2px;}
+.otherfood .txt-pos strong{float: right;color: #f76120;font-weight: normal;}
+
+.visted{width: 198px;height: 218px;border: 1px solid #e8e8e8;padding-left: 20px;padding-right: 20px;}
+.visted-top {padding-top: 17px;}
+.visted-top h3{height: 35px;font-size: 17px;}
+.visted-top span{color: #2bb8aa;}
+.visted-btm ul{width: 198px;}
+.visted-btm li{width: 198px;margin-bottom: 20px;border-bottom:1px dashed #e8e8e8;padding-bottom: 20px; }
+.visted-btm li a{color: #666666;}
+.visted-btm div{width: 108px;margin-left: 10px;}
+.visted-btm div span{color: #f76120;}
+.visted-btm div i{font-style: normal;text-decoration: line-through;}
+.visted-btm li.bordernone{border-bottom: none;}
+
+.comment-t{height: 94px;border-bottom: 2px solid #e8e8e8;}
+.comment-t h3{margin-top: 62px;font-size: 17px;}
+.comment-t span{margin-top: 65px;}
+.comment-t a{color: #2bb8aa;}
+.comment-b{height: 274px;}
+.comment-b h3{margin-top: 40px;height: 45px;}
+.comment-b .btn{height: 24px;background:#f4f4f4;padding-top: 8px; }
+.comment-b .btn span{margin-left: 10px;margin-right:352px; margin-top:3px;height: 21px;}
+.comment-b .btn input{margin-top:1px;width: 14px;height: 14px;background:url(../img/meituan/btn-bg.png) no-repeat;border: 1px solid #8e8f8f; }
+.comment-b .btn .chbox-1{margin-left: 15px;}
+.comment-b .btn i{display: inline-block;width: 40px;border-left: 1px solid #e1e1e1;border-right: 1px solid #e1e1e1;height: 16px;margin-left: 15px;font-style: normal;padding-left: 10px;}
+.comment-b .btn a{background: url(../img/meituan/arrow-icon.png) no-repeat;width: 7px;height: 8px;display: inline-block;}
+.comment-b .maincomment{height: 67px;text-align: center;line-height: 67px;width: 100%;}
+.comment-b .pricelist{height: 89px;border-top: 1px solid #f1f0f0;background: #fafafa;}
+.pricelist h4, .pricelist input{float: left;}
+.pricelist div{float: left;height: }
+.pricelist h4{margin-top: 28px;font-size: 25px;color: #f76120;}
+.pricelist h4 span{font-size: 12px;}
+.pricelist .shopprice{height: 28px;margin-top: 25px;float: left;margin-left: 36px;margin-right: 65px;}
+.pricelist .discount{margin-top: 25px;margin-right:72px;}
+.pricelist .sold{margin-top: 25px;margin-right: 133px;}
+.pricelist input{margin-top: 22px;margin-right: 10px;}
+.pricelist .buy{background: url(../img/meituan/buy-bg.png) no-repeat;width: 88px;height: 40px;}
+.pricelist .addin{background: url(../img/meituan/cart.png) no-repeat;width: 92px;height: 40px;}
+
+
+.interested{height: 230px;border: 1px solid #e1e1e1;padding-left: 20px;}
+.interested h3{margin-top: 21px;margin-bottom: 12px;font-size: 14px;color: black;}
+.interested li{width: 150px;height:162px;float: left;margin-right: 20px;}
+.interested li a{color: #666666;}
+.interested .txt-pos{height: 60px;}
+.interested .txt-pos p{line-height: 20px;margin-bottom: 8px;}
+.interested .txt-pos span{color: #f86120;}
+.appload img{margin-top: 10px;margin-bottom: 100px;}
+
+
+/*通用脚部*/
+.wb-footer{ border-top:3px solid #3aa2a2; width:100%; background:#f6f6f6; margin-top:20px;height: 328px;}
+.wbfrct{ width:980px; margin:0 auto;}
+.wbfrct ul{ width:187px; height:180px;  border-left:1px dashed #a5a5a5; margin-top:3px;}
+.wbfrct li{list-style:disc; margin-left:40px; line-height:20px;}
+.wbfrct .wbniu{list-style:none;  font-weight:bold; color:#3e4545; font-size:14px; line-height:35px; margin-top:13px;}
+.wbfrct .wb-bgniu{width:200px; border-right:1px dashed #a5a5a5; padding-left:25px;}
+.wb-bgniu span{background:url(../img/meituan/wb-kefu.png) no-repeat; width:52px; height:52px; display:block; margin-left:60px; margin-top:19px; margin-bottom:14px;}
+.wb-bgniu p{ line-height:20px; color:#666; font-size:12px;}
+.wb-bgniu i{ color:#2bb8aa; margin-bottom:15px; display:block;}
+.wb-copyright { width:546px; margin:0 auto; color:#999; font-size:12px; margin-top:34px; margin-bottom:22px;}
+.wb-footer .wb-footerbg{ width:614px; margin:0 auto; padding-bottom:40px;}
+.wb-footer a:hover{color:#f00;}
+.wb-footer a{color:#3e4545; font-size:12px;}
+
+
+
+
+
+
+
+
+

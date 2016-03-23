@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hand_lyre</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+body{background: url(img/2nd.png) repeat;}
+#div1 {width:940px; height:305px; border:1px solid black; margin:10px auto; position:relative; overflow:hidden;}
+#div1 span {width:20px; height:305px; display:block; position:absolute; left:0; top:0;}
+#div1 div {width:840px; height:305; position:absolute; left:0; top:0; background:#CCC;}
+</style>
+<script src="js/common.js"></script>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById('div1');
+	var aDiv=oDiv.children;
+	for(var i=1;i<aDiv.length;i++){
+		aDiv[i].style.left=aDiv[i].offsetWidth+20*(i-1)+'px';	
+	}
+	for(var i=0;i<aDiv.length;i++){
+		(function(index){
+			aDiv[i].onmouseover=function(){
+				for(var i=0;i<aDiv.length;i++){
+					if(i<=index){
+						move(aDiv[i],{left:i*20},{time:1000});
+					}else{
+						move(aDiv[i],{left:aDiv[i].offsetWidth+20*(i-1)},{time:1000});
+					}
+				}
+			};	
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<div class="active"><img src="img/hand_lyre/0.jpg" /><span></span></div>
+	<div><img src="img/hand_lyre/1.jpg" /><span></span></div>
+	<div><img src="img/hand_lyre/2.jpg" /><span></span></div>
+	<div><img src="img/hand_lyre/3.jpg" /><span></span></div>
+	<div><img src="img/hand_lyre/0.jpg" /><span></span></div>
+	<div><img src="img/hand_lyre/1.jpg" /><span></span></div>
+</div>
+</body>
+</html>

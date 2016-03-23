@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>piclist</title>
+<style>
+*{ margin:0; padding:0; list-style:none; font-family: "微软雅黑","张海山锐线体简"}
+body{background: url(img/2nd.png) repeat;}
+#picBox{width: 700px;height: 700px;overflow: hidden;margin: 50px auto;position: relative;}
+#picBox li{margin:0 0 60px 60px ;float: left;border:5px solid;cursor:pointer;}
+#picBox li img{width:128px;height:128px;}
+</style>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+	var oPicBox=document.getElementById('picBox');
+	var aLi=oPicBox.children;
+	var zIndex=2;  
+	var aPos=[];
+	for(var i=0;i<aLi.length;i++){
+		aPos.push({left:aLi[i].offsetLeft,top:aLi[i].offsetTop});
+		aLi[i].style.left=aPos[i].left+'px';
+		aLi[i].style.top=aPos[i].top+'px';
+	}
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].style.position='absolute';
+		aLi[i].style.margin=0;
+		aLi[i].index=i;
+	}
+	for(var i=0;i<aLi.length;i++){
+		drag(aLi[i])
+	}
+	function drag(obj){
+		obj.onmousedown=function(ev){
+			obj.style.zIndex++;
+			var oEvt=ev || event;
+			var disX=oEvt.clientX-obj.offsetLeft;
+			var disY=oEvt.clientY-obj.offsetTop;
+			document.onmousemove=function(ev){
+				var oEvt=ev || event;
+				obj.style.left=oEvt.clientX-disX+'px';
+				obj.style.top=oEvt.clientY-disY+'px';
+				for(var i=0;i<aLi.length;i++){				
+					aLi[i].style.borderColor='black';
+				}
+				var nearObj=findNearest(obj);
+				if(nearObj){
+					nearObj.style.borderColor='red';
+				}
+			}
+			document.onmouseup=function(){
+				document.onmousemove=document.onmouseup=null;
+				var nearObj=findNearest(obj)
+				if(nearObj){
+					move(nearObj,aPos[obj.index]);
+					move(obj,aPos[nearObj.index]);
+					nearObj.style.borderColor='black';
+					var tem;
+					tem=obj.index;
+					obj.index=nearObj.index;
+					nearObj.index=tem;
+				}else{
+					move(obj,aPos[obj.index],{time:1000});
+				}
+
+				obj.releaseCapture && obj.releaseCapture();
+			}
+			obj.setCapture && obj.setCapture();
+			return false;
+		}
+	}
+	function collTest(obj1,obj2){
+		var l1=obj1.offsetLeft;
+		var t1=obj1.offsetTop;
+		var r1=obj1.offsetLeft+obj1.offsetWidth;
+		var b1=obj1.offsetTop+obj1.offsetHeight;
+		
+		var l2=obj2.offsetLeft;
+		var t2=obj2.offsetTop;
+		var r2=obj2.offsetLeft+obj2.offsetWidth;
+		var b2=obj2.offsetTop+obj2.offsetHeight;
+		
+		if(l1>r2 || t1>b2 || r1<l2 || b1<t2){
+			//没撞到	
+			return false;
+		}else{
+			//撞到
+			return true;
+		}
+	}
+	function findNearest(obj){
+		var minDis=999999999999;
+		var minDisIndex=-1;
+		for(var i=0;i<aLi.length;i++){
+			if(obj==aLi[i]) continue;
+			if(collTest(obj,aLi[i])){
+				var dis=getDis(obj,aLi[i]);
+				if(dis<minDis)
+					minDis=dis;
+					minDisIndex=i;
+			}
+		}
+		if(minDisIndex==-1){
+			return null;
+		}else{
+			return aLi[minDisIndex];
+		}
+	}
+
+	function getDis(obj1,obj2){
+		var a=obj2.offsetTop-obj1.offsetTop;
+		var b=obj2.offsetLeft-obj1.offsetLeft;
+		return  Math.sqrt(a*a+b*b);
+	}
+}
+</script>
+</head>
+<body>
+<ul id="picBox">
+	<li><img src="img/picswall/1.png" alt=""></li>
+	<li><img src="img/picswall/2.png" alt=""></li>
+	<li><img src="img/picswall/3.png" alt=""></li>
+	<li><img src="img/picswall/4.png" alt=""></li>
+	<li><img src="img/picswall/5.png" alt=""></li>
+	<li><img src="img/picswall/6.png" alt=""></li>
+	<li><img src="img/picswall/7.png" alt=""></li>
+	<li><img src="img/picswall/8.png" alt=""></li>
+	<li><img src="img/picswall/9.png" alt=""></li>
+</ul>
+</body>
+</html>

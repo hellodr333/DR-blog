@@ -86,7 +86,7 @@
 					<p><span class="phone"></span> 联系电话：15601832659</p>
 					<p><span class="wechat"></span>微信:  dr900129</p>
 					<p><span class="email"></span>eMail：hello_DR@163.com</p>
-					<p><span class="github"></span>github: hellodr333</p>
+					<p><span class="github"></span>github: hellodr333.github.io/DR-blog</p>
 				</div>
 			</li>
 		</ul>
@@ -99,7 +99,8 @@
 		<span class="right" id="next">&gt;</span>
 	</li>
 	<li class="section2" id="section2">
-		<div class="baidu">
+		<div class="baidu" style="cursor:pointer">
+			<span id="changeSkin">枚红色不喜欢是不是丫？点我换张背景图吧~ </span>
 			<div class="logo">
 				<a href="javascript:;"></a>
 			</div>
@@ -112,8 +113,7 @@
 				<li><a href="javascript:;">地图</a></li>
 				<li><a href="javascript:;">问答</a></li>
 				<li><a href="javascript:;">机票</a></li>
-				<li><a href="javascript:;">汽车</a></li>
-				<li><a href="javascript:;">更多&gt;&gt;</a></li>
+				<li><a href="javascript:;">更多>></a></li>
 			</ul>
 			<div class="search">				
 				<div class="clearfix">
@@ -121,21 +121,26 @@
 					<input class="search_btn fr" type="submit" value="百度一下" id="search_btn"/>
 				</div>
 				<ul id="searchList">
-					<!-- <li></li> -->
 				</ul>
 			</div>
 		</div>
-		<div class="skin">
+		<div class="skin" id="skin">
 			<div class="clearFix">
-				<p class="fl">轻松换肤</p>
-				<div class="fr">添加滚动条</div>
+				<span>点击图片试试效果~</span>
+				<div class="fr scaleBox" id="scaleBox">
+					<b>改下透明度试试吧~</b>
+					<p>
+						<i class="scaleBtn" id="scaleBtn"></i>
+					</p>
+				</div>
+				<em id="closeBtn">×</em>
 			</div>
 			<ul class="clearFix" id="skinList">
-				<li><img src="img/skin1.jpg" alt="" width="120"></li>
-				<li><img src="img/skin2.jpg" alt="" width="120"></li>
-				<li><img src="img/skin3.jpg" alt="" width="120"></li>
-				<li><img src="img/skin4.jpg" alt="" width="120"></li>
-				<li><img src="img/skin5.jpg" alt="" width="120"></li>
+				<li><img src="img/skin2.jpg" alt="" width="110" height="95"></li>
+				<li><img src="img/skin1.jpg" alt="" width="120" height="95"></li>
+				<li><img src="img/skin3.jpg" alt="" width="120" height="95"></li>
+				<li><img src="img/skin4.jpg" alt="" width="120" height="95"></li>
+				<li><img src="img/skin5.jpg" alt="" width="120" height="95"></li>
 			</ul>
 		</div>
 	</li>
@@ -143,31 +148,122 @@
 		<div>
 			<h1>我可以用JS在页面上显示酷炫的效果！</h1>
 			<p>tab选项卡,鼠标拖拽,自定义滚动,瀑布流,延时加载,手风琴,碰撞检测等等.</p>
-			<div>
+			<div class="section3div">
 				<ul class="clearFix">
-					<li>谷歌app</li>
-					<li>放大镜效果</li>
-					<li>H5时钟</li>
-					<li>爆炸</li>
-					<li>翻页</li>
-					<li>翻转</li>
-					<li>自动播放选项卡</li>
-					<li></li>
+					<li>
+						<a href="piclist.html" target="blank" class="link_box" style="background:url(img/picswall/9.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							
+							<div><span>仿chrome 图片碰撞互换位置</span><i></i></div>
+						</a>
+						
+					</li>
+					<li>
+						<a href="zoom.html" target="blank" class="link_box" style="background:url(img/picswall/6.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							<div><span>神奇的放大镜效果</span><i></i></div>
+						</a>	
+					</li>
+					<li>
+						<a href="boom.html" target="blank" class="link_box" style="background:url(img/boom/boom-small.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							
+							<div><span>应用h5 属性写的爆炸效果</span><i></i></div>
+						</a>
+						
+					</li>
+					<li>
+						<a href="clock.html" target="blank" class="link_box" style="background:url(img/picswall/4.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							
+							<div><span>应用h5 属性做的数字时钟</span><i></i></div>
+						</a>
+
+					</li>
+					<li>
+						<a href="picwall.html" target="blank" class="link_box" style="background:url(img/picswall/2.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							
+							<div><span>美丽的照片墙</span><i></i></div>
+						</a>
+						
+					</li>
+					<li>
+						<a href="changePage.html" target="blank" class="link_box" style="background:url(img/boom/changePage.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							
+							<div><span>酷炫的翻页效果</span><i></i></div>
+						</a>
+						
+					</li>
+					<li>
+						<a href="toggle_tab.html" target="blank" class="link_box" style="background:url(img/picswall/8.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							
+							<div><span>幻灯片切换效果</span><i></i></div>
+						</a>
+						
+					</li>
+					<li>
+						<a href="hand_lyre.html" target="blank" class="link_box"  style="background:url(img/boom/yue.png) no-repeat center;background-color:white;">
+							<span class="line line_t"></span>
+							<span class="line line_b"></span>
+							<span class="line line_l"></span>
+							<span class="line line_r"></span>
+							
+							<div><span>手风琴效果</span><i></i></div>
+						</a>
+						
+					</li>
 				</ul>
 			</div>
 		</div>
 	</li>
 	<li class="section4">
 		<div class="clearFix">
-			<ul class="fl">
-				<li>360影视</li>
-				<li>youku</li>
-				<li>小米</li>
-				<li>车讯网</li>
-			</ul>
-			<div class="fr">
+			<div class="left fl">
+				<ul class="clearFix">
+					<li><a href="index_360.html" target="blank" style="background:url(img/360.jpg) no-repeat center;"></a>
+					<span>模仿360影视做的网站,里面选项卡用到的比较多，做的时候布局上面需要留意一些</span>
+					</li>
+					<li><a href="index_youku.html" target="blank" style="background:url(img/youku.jpg) no-repeat center;"></a><span>模仿优酷网做的,里面有很多引入进来的frame框架</span></li>
+					<li><a href="meituan_detail.html" target="blank" style="background:url(img/meituan.jpg) no-repeat center;"></a><span>和小伙伴们一起分模块完成的,负责详情页面,最后"大合体"的时候还是蛮辛酸的~哈哈</span></li>
+					<li><a href="index_cheXun.html" target="blank" style="background:url(img/chexun.jpg) no-repeat center;"></a><span>为了提升敲代码的手速,练习了很多网站,车讯网的页面风格还是不错的。</span></li>
+				</ul>
+			</div>
+			<div class="right fr">
 				<h1>业余时间模仿其他网站写的一些网页</h1>
-				<p>文字文字文字</p>
+				<p>
+					<span>
+					在没事的时候会在网上找些psd文件来还原设计图,从最简单的静态页面到现在可以写出一些h5的效果来，看到自己的进步，觉得再辛苦也是值得的。
+					</span>
+					<span>
+					对于代码一直有着浓厚的兴趣,在空闲的时间里会去慕课网或者w3c学习各种前端的知识。总是难以忘记实现一个小效果时候的兴奋和解决一个bug时候的满足感。
+					</span>
+					<i></i>
+					<strong>欢喜前端 欢喜生活</strong>
+				</p>	
 			</div>
 		</div>
 	</li>

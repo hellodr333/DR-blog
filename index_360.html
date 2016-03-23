@@ -1,0 +1,4981 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>360影视</title>
+<link href="css/index_360.css" rel="stylesheet"/>
+<script type="text/javascript">
+	function getStyle(obj,attr){
+	  if(obj.currentStyle){
+	    return obj.currentStyle[attr];
+	  }else{
+	    return getComputedStyle(obj,false)[attr];
+	  }
+	}
+	function move(obj,json,optional){ 
+	  optional=optional||{};
+	  optional.time=optional.time || 300;
+	  optional.type=optional.type || 'ease-out';
+	  optional.fn=optional.fn || null;
+	  var start={};
+	  var dis={};
+	  for (var key in json){
+	    start[key]=parseFloat(getStyle(obj,key));
+	    dis[key]=json[key]-start[key];
+
+	  }
+	  var count=Math.round(optional.time/30);
+	  var n=0;
+
+	  clearInterval(obj.timer)
+	  obj.timer=setInterval(function(){
+	    n++;
+	    for(var key in json){
+	      switch(optional.type){
+	        case 'liner':
+	        var a=n/count;
+	        var cur=start[key]+dis[key]*a;
+	        break;
+	        case 'ease-in':
+	        var a=n/count;
+	        var cur=start[key]+dis[key]*a*a*a;
+	        break;
+	        case 'ease-out':
+	        var a=1-n/count;
+	        var cur=start[key]+dis[key]*(1-a*a*a);
+	        break;
+	      }
+	      if(key=='opacity'){
+	        obj.style.opacity=cur;
+	        obj.style.filter='alpha(opacity:'+cur*100+')';
+	      }else{
+	        obj.style[key]=cur+'px';
+	      }
+	    }
+	    if(n==count){
+	      clearInterval(obj.timer);
+	      optional.fn && optional.fn();
+	    }
+	  },30)
+	}
+	function tab(id1,id2){
+	  var oHead=document.getElementById(id1);
+	  var oBody=document.getElementById(id2);
+	  var aHead=oHead.getElementsByTagName('a');
+	  var aBody=oBody.children;
+
+	  for(var i=0;i<aHead.length;i++){
+	    aHead[i].index=i;
+	    aHead[i].onmouseover=function(){
+	      for(var j=0;j<aHead.length;j++){
+	        aHead[j].className='';
+	        aBody[j].className='';
+	      }
+	      this.className='on';
+	      aBody[this.index].className='show';
+	    }
+	  }
+	}
+window.onload=function(){
+	//nav 运动
+  	var oHd_nav_list=document.getElementById('hd_nav_list');
+  	var aLi=oHd_nav_list.getElementsByTagName('li');
+
+  	for(var i=0;i<aLi.length;i++){
+  		aLi[i].children[0].onmouseover=function(){
+  			var nextNode=this.nextElementSibling || this.nextSibling;
+  			move(nextNode,{opacity:1})
+  		}
+  		aLi[i].onmouseout=function(){
+  			move(this.children[1],{opacity:0})
+  		}	
+  	}
+	// tab 调用
+
+	tab('today-hot-l-list1','today-hot-l-cont');
+	tab('tvplay','tvplay-cont');
+	tab('flick','flickCont');
+	tab('amusement-l-list','amusement-l-cont');
+	tab('cartoon-l-list','cartoon-l-cont');
+};
+</script>
+</head>
+<body>
+	<!-- top -->
+	<div class="top">
+		<div class="hd">
+			<div class="wrapper clearFix">
+				<a href="#"><h1 class="fl">360影视</h1></a>
+				<div class="fl">
+					<div class="search clearFix">
+						<!-- <span class="fl"></span> -->
+						<form action="" method="">
+							<input class="fl txt" type="text" name="search" value="" placeholder="多来梦：伴我同行"/>
+							<input class="fl sub" type="button" name="" value=""/>
+						</form>
+					</div>
+				</div>
+				<div class="fr">
+					<ul class="hd-nav-list clearFix" id="hd_nav_list">
+						<li class="fl">
+							<a href="#" class="movie fl">我的影视</a>
+							<div class="hd-nav-pos"></div>
+						</li>
+						<li class="fl">
+							<a href="#" class="view fl">观看记录</a>
+							<div class="hd-nav-pos"></div>
+						</li>
+						<li class="fl">
+							<a href="#" class="app fl">APP下载</a>
+							<div class="hd-nav-pos"></div>
+						</li>
+					</ul>
+				</div>
+			</div>	
+		</div>	
+		<div class="nav wrapper">
+					<ul class="clearFix">
+						<li><a href="#">首页</a></li>
+						<li><a href="#">网络院线</a></li>
+						<li><a href="#">电视剧</a></li>
+						<li><a href="#">电影.预告</a></li>
+						<li><a href="#">综艺</a></li>
+						<li><a href="#">动漫</a></li>
+						<li><a href="#">资讯</a></li>
+						<li><a href="#">娱乐</a></li>
+						<li><a href="#">直播</a></li>
+						<li><a href="#">广场</a></li>
+						<li><a href="#">秀场</a></li>
+						<li><a href="#">体育</a></li>
+						<li><a href="#">搞笑</a></li>
+						<li><a href="#">舞蹈</a></li>
+						<li><a href="#">音乐</a></li>
+						<li><a href="#">游戏</a></li>
+						<li><a href="#">专题</a></li>
+					</ul>
+		</div>
+		<div class="banner">
+			<ul class="banner-list">
+				<li class="show">
+					<a href="#"><img src="img/360/banner-1.jpg" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/360/banner-2.jpg" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/360/banner-3.jpg" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/360/banner-1.jpg" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/360/banner-2.jpg" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/360/banner-3.jpg" alt="" /></a>
+				</li>			
+			</ul>
+			<div class="banner-pos">
+				<h3>大汉情缘之云中歌</h3>
+				<p>我是一段文字文字文字文字我是一段文字文字文</p>
+				<div class="btn clearFix">
+					<a href="#">
+						<img src="img/360/banner-btn-3.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-4.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-1.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-2.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-3.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-4.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-1.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-2.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-3.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-4.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-1.jpg" alt="" />
+						<i></i>
+					</a>
+					<a href="#">
+						<img src="img/360/banner-btn-2.jpg" alt="" />
+						<i></i>
+					</a>
+				</div>
+			</div>
+		</div>
+    </div>
+
+	<!--todayhot -->
+	<div class="today-hot clearFix wrapper">
+		<div class="today-hot-l fl">
+			<div class="today-hot-l-hd clearFix">
+				<h2 class="fl">今日热门</h2>
+				<div class="fl">
+					<ul class="today-hot-l-list1 clearFix" id="today-hot-l-list1">
+						<li><a class="on" href="#">热点</a></li>
+						<li><a href="#">美女</a></li>
+						<li><a href="#">游戏</a></li>
+						<li><a href="#">搞笑</a></li>
+					</ul>
+				</div>
+				<a class="more fl" href="#">更多>></a>
+			</div>
+			<div class="today-hot-l-cont clearFix" id="today-hot-l-cont">
+				<ul class="show">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="today-hot-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-1.jpg" alt="" />
+								<span>称其不备拔腿逃走</span>
+								<i></i>
+								<p>女子餐厅被刀架脖子上 索性没有人员伤亡</p>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<div class="today-hot-l-list2 clearFix">
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="today-hot-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>以上是跑男的最新消息</span>
+								<i></i>
+								<p>我是文字我是文字 我是文字我是文字</p>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<div class="today-hot-l-list2 clearFix">
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="today-hot-l-pos1">
+								<img src="img/360/banner-3.jpg" alt="" />
+								<span>我们是属于游戏分组的</span>
+								<i></i>
+								<p>我是文字我是文字 我是文字我是文字</p>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<div class="today-hot-l-list2 clearFix">
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="today-hot-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-1.jpg" alt="" />
+								<span>我们属于搞笑分组</span>
+								<i></i>
+								<p>我是文字我是文字 我是文字我是文字</p>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<div class="today-hot-l-list2 clearFix">
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="fl list2">
+									<div class="today-hot-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>与TF-boys合影</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="today-hot-r fl">
+			<a href="#"><h2>独家热门资讯</h2></a>
+			<div>
+				<a href="#">
+					<img src="img/360/today-hot-l-cont-big-2.jpg" alt="">
+					<span></span>
+					<i></i>
+				</a>
+			</div>
+			<div>
+				<ul>
+					<li><a href="#">二十国集团峰会即将召开</a></li>
+					<li><a href="#">二十国集团峰会即将召开</a></li>
+					<li><a href="#">二十国集团峰会即将召开</a></li>
+					<li><a href="#">二十国集团峰会即将召开</a></li>
+					<li><a href="#">二十国集团峰会即将召开</a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+    <!-- main-tvplay -->
+	<div class="tvplay wrapper">
+		<div class="tvplay-l fl">
+			<div class="tvplay-l-hd clearFix">
+				<h2 class="fl">电视剧</h2>
+				<div class="fl">
+					<ul class="tvplay-l-list1 clearFix" id="tvplay">
+						<li><a class="on" href="#">热门</a></li>
+						<li><a href="#">最新</a></li>
+						<li><a href="#">内地</a></li>
+						<li><a href="#">港台</a></li>
+						<li><a href="#">韩剧</a></li>
+						<li><a href="#">美剧</a></li>
+						<li><a href="#">泰剧</a></li>
+					</ul>
+				</div>
+				<a class="more fl" href="#">更多>></a>
+			</div>
+			<div class="tvplay-l-cont" id="tvplay-cont">
+				<ul class="show clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-2.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-2.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">更新至第十集</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="tvplay-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p>更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="tvplay-r fr">
+			<div class="tvplay-r-t">
+				<h3>本月最受关注电视剧</h3>
+				<ul id="tvplay_side">
+					<li>
+						<a href="#">	
+							<div class="img on">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">1.大秧歌</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix colorgrey hide">
+								<b class="fl">1. 大秧歌</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">2. 大汉情缘</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">2. 大汉情缘</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">3. 芈月传</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">3. 芈月传</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">4. 封神榜</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">4. 封神榜</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">	
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">5.北上广</span>
+									<i class="fr">300.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">5.北上广</b>
+								<strong class="fr">300.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">6. 西游记</span>
+									<i class="fr">233.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">6. 西游记</b>
+								<strong class="fr">233.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">7. 芈月传</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">3. 芈月传</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">8. 水浒</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">8. 水浒</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">9. 红楼</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">9. 红楼</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">10. 三国</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">10. 三国</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>					
+				</ul>
+			</div>
+			<div class="tvplay-r-btm">
+				<h3>电视剧筛选</h3>
+				<div>
+					<p>类型：偶像 古装 玄幻 科技</p>
+					<p>地区：大陆 欧美 港台  日韩</p>
+					<p>年份：2014 2015 2013</p>
+					<p>偶像：孙俪 周星驰 黎明</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!--filck -->
+	<div class="flick wrapper">
+		<div class="flick-l fl">
+			<div class="flick-l-hd clearFix">
+				<h2 class="fl">电影</h2>
+				<div class="fl">
+					<ul class="flick-l-list1 clearFix" id="flick">
+						<li><a class="on" href="#">热门</a></li>
+						<li><a href="#">最新</a></li>
+						<li><a href="#">喜剧</a></li>
+						<li><a href="#">爱情</a></li>
+						<li><a href="#">动作</a></li>
+						<li><a href="#">恐怖</a></li>
+						<li><a href="#">战争</a></li>
+						<li><a href="#">魔幻</a></li>
+					</ul>
+				</div>
+				<a class="more fl" href="#">更多>></a>
+			</div>
+			<div class="flick-l-cont" id="flickCont">
+				<ul class="show clearFix" >
+					<li class="fl">
+						<a htoday-hot-l-list1ref="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>我是证人</h4>
+							<h5>杨幂鹿晗陷入恶魔杀人怪圈</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>我是证人</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>2015 剧情 大陆</p>
+										<p>导游：安宰贤</p>
+										<p>主演：杨幂 鹿晗</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-2.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">1080p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p  class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-2.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">1080p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">720*</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">720p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">1020p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">720p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">1020p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearFix">
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-1.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-3.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">720p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-4.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">普通</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">1020p</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars"></p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-5.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl">高清</span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="#">
+							<img src="img/360/tvplay-cont-6.jpg" alt="" />
+							<div class="newupdate clearFix">
+								<span class="fl"></span>
+								<span class="fr">9分</span>
+							</div>
+							<i></i>
+							<h4>家和万事兴</h4>
+							<h5>豪门的家庭 怎么会和睦</h5>
+							<div class="flick-l-cont-pos">
+								<div class="tit-describe">
+									<h6>爱情碟中谍</h6>
+									<div class="describe">
+										<p class="stars">更新至第8集</p>
+										<p>言情</p>
+										<p>导游：周星驰</p>
+										<p>主演：虫委委</p>
+									</div>
+									<i></i>
+								</div>
+								<b></b>
+							</div>
+						</a>
+					</li>
+				</ul>				
+			</div>
+		</div>
+		<div class="tvplay-r fr">
+			<div class="tvplay-r-t">
+				<h3>本月最受关注电影</h3>
+				<ul>
+					<li>
+						<a href="#">	
+							<div class="img on">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">1.栀子花开</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix colorgrey hide">
+								<b class="fl">1. 栀子花开</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">2. 道士下山</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">2. 道士下山</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">3. 僵尸归来</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">3. 僵尸归来</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">4. 封神榜</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">4. 封神榜</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">	
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">5.北上广</span>
+									<i class="fr">300.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">5.北上广</b>
+								<strong class="fr">300.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">6. 西游记</span>
+									<i class="fr">233.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">6. 西游记</b>
+								<strong class="fr">233.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">7. 芈月传</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">3. 芈月传</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">8. 水浒</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">8. 水浒</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">9. 红楼</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">9. 红楼</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">10. 三国</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">10. 三国</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>					
+				</ul>
+			</div>
+			<div class="tvplay-r-btm">
+				<h3>电影筛选</h3>
+				<div>
+					<p>类型：偶像 古装 玄幻 科技</p>
+					<p>地区：大陆 欧美 港台  日韩</p>
+					<p>年份：2014 2015 2013</p>
+					<p>偶像：孙俪 周星驰 黎明</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!--prevue-special-->
+    <div class="prevue-special wrapper">
+    	<div class="prevue fl">
+    		<div class="prevue-tit clearFix">
+    			<h2 class="fl">电影.预告片</h2>
+    			<span class="more fl">更多</span>
+    		</div>
+    		<ul class="clearFix">
+    			<li class="prevue-pos">
+    				<a href="#">
+    					<img src="img/360/prevue-1.png" alt="" />
+    					<i></i>
+    					<b>虫委委的网名叫桑代克的猫</b>
+    					<strong></strong>
+    					<p>老炮儿</p>
+    				</a>
+    			</li>
+    			<li class="prevue-pos">
+    				<a href="#">
+    					<img src="img/360/prevue-2.png" alt="" />
+    					<i></i>
+    					<b>虫委委的网名叫桑代克的猫</b>
+    					<strong></strong>
+    					<p>老炮儿</p>
+    				</a>
+    			</li>
+    			<li class="prevue-pos">
+    				<a href="#">
+    					<img src="img/360/prevue-3.png" alt="" />
+    					<i></i>
+    					<b>虫委委的网名叫桑代克的猫</b>
+    					<strong></strong>
+    					<p>老炮儿</p>
+    				</a>
+    			</li>
+    			<li class="prevue-pos">
+    				<a href="#">
+    					<img src="img/360/prevue-4.png" alt="" />
+    					<i></i>
+    					<b>虫委委的网名叫桑代克的猫</b>
+    					<strong></strong>
+    					<p>老炮儿</p>
+    				</a>
+    			</li>
+    		</ul>
+    	</div>
+    	<div class="special fr">
+    		<div class="special-tit clearFix">
+    			<h2 class="fl">电影.专题</h2>
+    		</div>
+    		<div class="special-pos">
+    			<a href="#">
+	    			<img src="img/360/spacial.png" alt="" />
+	    			<i></i>
+	    			<b>虫委委的网名叫桑代克的猫</b>
+	    			<strong></strong>
+	    			<p>老炮儿</p>
+    			</a>
+    		</div>
+    	</div>
+    </div>
+
+
+	<!--amusement-->
+	<div class="amusement wrapper clearFix">
+		<div class="amusement-l fl">
+			<div class="amusement-l-hd clearFix">
+				<h2 class="fl">综艺</h2>
+				<div class="fl">
+					<ul class="amusement-l-list clearFix" id="amusement-l-list">
+						<li><a class="on" href="#">热门</a></li>
+						<li><a href="#">选秀</a></li>
+						<li><a href="#">情感</a></li>
+						<li><a href="#">访谈</a></li>
+					</ul>
+				</div>
+				<a class="more fl" href="#">更多>></a>
+			</div>
+			<div class="amusement-l-cont" id="amusement-l-cont">
+				<ul class="show">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="amusement-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>111111</span>
+								<i></i>
+								<p>奔跑吧兄弟 第三季</p>
+								<h6>跑男团不撕名牌比才艺 "好声音现场开演唱会"</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="amusement-l-list2 clearFix">
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="amusement-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>2222</span>
+								<i></i>
+								<p>奔跑吧兄弟 第三季</p>
+								<h6>跑男团不撕名牌比才艺 "好声音现场开演唱会"</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="amusement-l-list2 clearFix">
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="amusement-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>2015-11-25期</span>
+								<i></i>
+								<p>奔跑吧兄弟 第三季</p>
+								<h6>跑男团不撕名牌比才艺 "好声音现场开演唱会"</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="amusement-l-list2 clearFix">
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="amusement-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>2015-11-25期</span>
+								<i></i>
+								<p>奔跑吧兄弟 第三季</p>
+								<h6>跑男团不撕名牌比才艺 "好声音现场开演唱会"</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="amusement-l-list2 clearFix">
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="amusement-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="amusement-r fr">
+			<h3>人气综艺榜</h3>
+			<ul>
+					<li>
+						<a href="#">	
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">1.栀子花开</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix colorgrey">
+								<b class="fl">1. 栀子花开</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">2. 道士下山</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">2. 道士下山</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">3. 僵尸归来</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">3. 僵尸归来</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">4. 封神榜</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">4. 封神榜</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">	
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">5.北上广</span>
+									<i class="fr">300.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">5.北上广</b>
+								<strong class="fr">300.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">6. 西游记</span>
+									<i class="fr">233.6万</i>
+								</div>
+							</div>
+							<div class="txt clearFix">
+								<b class="fl">6. 西游记</b>
+								<strong class="fr">233.6万</strong>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">							
+							<div class="img">
+								<img src="img/360/tvplay-cont-1.jpg" alt="" />
+								<div class="imgtit clearFix">
+									<h6></h6>
+									<span class="fl">7. 芈月传</span>
+									<i class="fr">719.6万</i>
+								</div>
+							</div>
+							<div class="colorgrey txt clearFix">
+								<b class="fl">7. 芈月传</b>
+								<strong class="fr">719.6万</strong>
+							</div>
+						</a>
+					</li>				
+			</ul>
+		</div>
+	</div>
+
+
+	<!--cartoon-->
+	<div class="cartoon wrapper clearFix">
+		<div class="cartoon-l fl">
+			<div class="cartoon-l-hd clearFix">
+				<h2 class="fl">动漫</h2>
+				<div class="fl">
+					<ul class="cartoon-l-list clearFix" id="cartoon-l-list">
+						<li><a class="on" href="#">热门</a></li>
+						<li><a href="#">日韩</a></li>
+						<li><a href="#">国产</a></li>
+						<li><a href="#">欧美</a></li>
+					</ul>
+				</div>
+				<a class="more fl" href="#">更多>></a>
+			</div>
+			<div class="cartoon-l-cont" id="cartoon-l-cont">
+				<ul class="show">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="cartoon-l-pos1">
+								<img src="img/360/prevue-1.png" alt="" />
+								<span>865万</span>
+								<i></i>
+								<p>海绵宝宝</p>
+								<h6>爱惹麻烦的海绵宝宝</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="cartoon-l-list2 clearFix">
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/prevue-2.png" alt="" />
+											<span>36万</span>
+											<i></i>
+											<p>加菲猫</p>
+											<h6>好吃懒做的加菲猫</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/prevue-3.png" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/prevue-4.png" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/prevue-1.png" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="cartoon-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>2015-11-25期</span>
+								<i></i>
+								<p>奔跑吧兄弟 第三季</p>
+								<h6>跑男团不撕名牌比才艺 "好声音现场开演唱会"</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="cartoon-l-list2 clearFix">
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="cartoon-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>2015-11-25期</span>
+								<i></i>
+								<p>奔跑吧兄弟 第三季</p>
+								<h6>跑男团不撕名牌比才艺 "好声音现场开演唱会"</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="cartoon-l-list2 clearFix">
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul class="">
+					<li class="clearFix">
+						<a href="#" class="fl">
+							<div class="cartoon-l-pos1">
+								<img src="img/360/today-hot-l-cont-big-2.jpg" alt="" />
+								<span>2015-11-25期</span>
+								<i></i>
+								<p>奔跑吧兄弟 第三季</p>
+								<h6>跑男团不撕名牌比才艺 "好声音现场开演唱会"</h6>
+								<div>
+									<b></b>
+									<strong></strong>
+								</div>
+							</div>
+						</a>
+						<div class="fl">
+							<ul class="cartoon-l-list2 clearFix">
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="fl">
+									<div class="cartoon-l-pos2">
+										<a href="#">
+											<img src="img/360/today-hot-l-cont-1.jpg" alt="" />
+											<span>2015-11-25期</span>
+											<i></i>
+											<p>算了我就是文字我也写不好</p>
+											<h6>宋佳暖心驾到 邢菲洒泪联系</h6>
+											<div>
+												<b></b>
+												<strong></strong>
+											</div>
+										</a>
+									</div>
+								</li>								
+							</ul>
+						</div>
+					</li>
+				</ul>			
+			</div>
+		</div>
+		<div class="cartoon-r fr">
+			<div class="cartoon-r-t">
+				<h3>每日更新</h3>
+				<div class="btn clearFix">
+					<a href="#">一</a>
+					<a href="#">二</a>
+					<a href="#">三</a>
+					<a href="#">四</a>
+					<a href="#">五</a>
+					<a href="#">六</a>
+					<a href="#">日</a>
+				</div>
+			</div>
+			<div class="scrollbar">					
+			</div>
+		</div>
+	</div>
+
+
+	<!--plan-->
+	<div class="plan wrapper">
+		<div class="plan-top">
+			<h2 class="fl">独家策划</h2>
+			<div class="fl">
+				<ul class="plan-list clearFix">
+					<li><a href="#">明星剧场</a></li>
+					<li><a href="#">音乐汇</a></li>
+					<li><a href="#">体坛荷尔蒙</a></li>
+					<li><a href="#">搞笑联盟台</a></li>
+					<li><a href="#">美女时尚</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="plan-botm">
+			<div class="plan-pos1">
+				<a href="#">
+					<img src="img/360/plan-1.png" alt="" />
+					<i></i>
+					<h6>独家大新闻</h6>
+					<p>我们代表的是文字</p>
+				</a>
+			</div>
+			<div class="plan-pos2">
+				<a href="#">
+					<img src="img/360/plan-2.png" alt="" />
+					<i></i>
+					<h6>独家大新闻</h6>
+					<p>我们代表的是文字</p>
+				</a>
+			</div>
+			<div class="plan-pos3">
+				<a href="#">
+					<img src="img/360/plan-3.png" alt="" />
+					<i></i>
+					<h6>独家大新闻</h6>
+					<p>我们代表的是文字</p>
+				</a>
+			</div>
+			<div class="plan-pos4">
+				<a href="#">
+					<img src="img/360/plan-4.png" alt="" />
+					<i></i>
+					<h6>独家大新闻</h6>
+					<p>我们代表的是文字</p>
+				</a>
+			</div>
+			<div class="plan-pos5">
+				<a href="#">
+					<img src="img/360/plan-5.jpg" alt="" />
+					<i></i>
+					<h6>独家大新闻</h6>
+					<p>我们代表的是文字</p>
+				</a>
+			</div>
+			<div class="plan-pos6">
+				<a href="#">
+					<img src="img/360/plan-6.png" alt="" />
+					<i></i>
+					<h6>独家大新闻</h6>
+					<p>我们代表的是文字</p>
+				</a>
+			</div>
+			<div class="plan-pos7">
+				<a href="#">
+					<img src="img/360/plan-7.png" alt="" />
+					<i></i>
+					<h6>独家大新闻</h6>
+					<p>我们代表的是文字</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!--footer-->
+	<div class="footer wrapper">
+		<ul class="clearFix">
+			<li><a href="#">意见反馈</a></li>
+			<li><a href="#">官方微博</a></li>
+			<li><a href="#">加入收藏</a></li>
+			<li><a href="#">版权申明</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">联系方式</a></li>
+		</ul>
+		<p>Copyright © 360安全网址. All Rights Reserved.    浙ICP证B2-20090064号   信息网络传播视听节目许可证1109357号</p>
+	</div>
+</body>
+</html>

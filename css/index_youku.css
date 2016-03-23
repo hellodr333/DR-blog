@@ -1,0 +1,515 @@
+/*优酷网*/
+/*清除默认样式*/
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input { margin: 0; padding: 0; border: 0; }
+a{ text-decoration:none;}
+li{ list-style:none; }
+img,input,select,textarea,li{ vertical-align: top; }
+input,select,textarea{outline: none;border:none;}
+textarea{resize:none;}
+img{border:none;}
+.fl{ float:left;display:inline; }
+.fr{ float:right;display:inline; }
+.clearFix:after{ content:""; display:block; clear:both; }
+.clearFix{zoom:1;}
+body{font-size:12px;color:#555555;font-family:"Microsoft YaHei";}
+.wrapper{width:970px;margin:0 auto;}
+a{color: #555555;}
+
+/*头部*/
+.header{padding-top:10px;}
+.logo h1{background: url(../img/youku/logo.png) no-repeat;width:140px;height:31px;text-indent: -9999em;margin-top:8px;}
+.search{margin-left:180px;}
+.search-txt{width:200px;height:34px;border:2px solid #a0a0a0;border-right: none;padding-left:28px;}
+.search-btn{width:88px;height: 38px;border:1px solid #1a67cb;background:url(../img/youku/search-btn.png) no-repeat;cursor:pointer;}
+.hd-nav{padding-top: 14px;}
+.hd-nav a{font-size: 12px;color:#555555;}
+.hd-nav span{display: block;}
+.upload{padding-left: 18px;background: url(../img/youku/upload.png) no-repeat;width:28px;height: 14px;padding-top: 2px;}
+.hd-nav i{background: url(../img/youku/upload-icon.png) no-repeat 0 6px;width:12px;height: 10px;}
+.vip{margin-left: 20px;padding-top: 2px;}
+.download{margin-left: 20px;margin-right: 25px;padding-top: 2px;}
+.login{padding-left: 20px;background: url(../img/youku/login.png) no-repeat;width: 34px;height: 14px;padding-top: 2px;}
+.register{padding-top: 1px;}
+.nav{height: 31px;border-bottom: 3px solid #e6e6e6;padding-top: 25px;}
+.nav-l li a{color:#555555;font-size: 15px;padding-top: 6px;display: block;margin-right: 21px;}
+.nav-l li a.on{color:#4fa7e1;}
+.nav-r li a{color:#555555;font-size: 12px;padding-top: 9px;display: block;
+	         margin-right: 21px;padding-right: 12px;background: url(../img/youku/upload-icon.png) no-repeat right 14px;height: 12px;}
+.nav span a{color:#555555;font-size: 12px;padding-top: 9px;display: block;}
+.nav input{width: 78px;height: 25px;border: 1px solid #d1d1d1;background: #f2f2f2;color:#4fa7e1; cursor:pointer;}
+
+
+/*footer*/
+.footer{height: 328px;border-top: 2px solid #dddddd;margin-top: 20px;padding-top: 24px;}
+.footer-t{line-height: 28px;margin-bottom: 36px;height: 112px;}
+.footer-t h6{color:#909090;font-size: 12px;}
+.footer-t>div{margin-right: 39px;}
+.type{width:190px;}
+.software{width: 108px;}
+.footer-t .group{margin-right: 6px;}
+.footer-t .youku{margin-right: 17px;}
+.footer-c>div{margin-right: 50px;}
+.footer-c{margin-bottom: 54px;height: 90px;}
+.footer-c p{line-height: 25px;}
+.footer-c1 p{padding-left: 19px;background: url(../img/youku/footer-icon1.png) no-repeat;width:108px;}
+.footer-c2 p{width:154px;}
+.footer-c3 p{width:292px;}
+.footer-c4 img{width: 90px;height: 90px;margin-right: 20px;}
+.footer-c4 h5{margin-top: 22px;font-size: 17px;}
+.footer-c4 p{margin-top: 13px;}
+.footer-b p{text-align: center;}
+
+
+
+/*banner*/
+.banner{padding-top: 20px;}
+.banner-l{width: 660px;}
+.banner-r{width: 310px;height: 370px;}
+.banner-l-t{height: 240px;width: 660px;}
+.banner-l-b{/*height: 130px;*/width: 660px;}
+.banner-l-t .bigpic{margin-right: 20px;position: relative;width: 420px;height: 240px;}
+.bigpic img{position: absolute;left: 0;top: 0;}
+.bigpic .bigpic-pos{position: absolute;left: 0;bottom: 10px;}
+.bigpic .bigpic-pos{width: 415px;height: 42px;padding-left: 5px;color: white;}
+.bigpic .bigpic-pos p{font-size: 15px;margin-bottom: 7px;}
+.bigpic .bigpic-pos i, .bigpic .bigpic-pos span, .bigpic .bigpic-pos b{font-style:normal;font-weight:normal;font-size:12px;width:36px;height:12px;padding-left: 16px;padding-top:2px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat 0 2px;}
+.bigpic .bigpic-pos span{background: url(../img/youku/banner-bigpic-icon2.png) no-repeat 0 2px;}
+.bigpic .bigpic-pos b{background: url(../img/youku/banner-bigpic-icon3.png) no-repeat 0 2px;}
+.bigpic .bigpic-pos span{margin-left: 7px;margin-right: 7px;}
+.bigpic .bigpic-pos strong{background: url(../img/youku/banner-bigpic-r.png) no-repeat;width:56px;height: 20px;position: relative;top:-2px;}
+
+.banner-l-t ul{width: 220px;}
+.banner-l-b ul{width: 660px;}
+.banner-l li{position: relative;width: 200px;height: 110px;margin-right: 20px;margin-bottom: 20px;}
+.banner-l li img{position: absolute;left: 0;top: 0;}
+.banner-l li p{position: absolute;left: 0;bottom: 5px;color: white;text-indent: 2px;font-weight: bold;}
+
+.banner-small-pos{position: absolute;left: 0;top: 0;width: 190px;height: 80px;padding: 15px 5px;font-size: 12px;color: white;}
+.banner-small-pos a{color:white;}
+.banner-smallpic-pos b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 200px;height: 110px;}
+.banner-small-pos h5{margin-bottom: 9px;}
+.banner-small-pos .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;}
+.banner-small-pos h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.banner-small-pos .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.banner-small-pos .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;}
+
+.banner-l li .banner-smallpic-pos{display:none;}
+.banner-l li:hover .banner-smallpic-pos{display:block;}
+.banner-l li p{display: block;}
+
+.banner-l li.show .banner-smallpic-pos{display: block;}
+.banner-l li.show p{display:none;}
+.banner-l-b li{float:left;}
+
+.banner-r1{height:110px;margin-bottom: 20px;}
+.banner_r2{ height:340px; background:#eee;}
+.banner-r1 iframe, .banner-r2 iframe{width:100%;height:100%;}
+
+/*personal*/
+.personal{height: 240px;margin-top: 50px;}
+.personal-l{height: 100%;}
+.personal-l-t{margin-bottom: 20px;}
+.personal-l-t h2{margin-top:2px;font-size: 24px;margin-right: 20px;}
+.personal-l-t span{width:76px;height:30px;float:left;line-height: 30px;text-align: center;font-size: 12px;background: white;cursor:pointer;}
+.personal-l-t span.on{background: #06a7e1;color:white;}
+
+.personal-l-btm ul{width: 660px;height: 190px;display: none;overflow: hidden;}
+.personal-l-btm ul.show{display: block;}
+.personal-l-btm li{float:left;width: 200px;height: 190px;background: #f5f5f5;position: relative;margin-right: 20px;}
+.personal-l-btm li img{position: absolute;left: 0;top: 0;}
+.personal-l-btm li span{position: absolute;right: 5px;top: 95px;color: white;font-weight: bold;}
+.personal-l-btm li div{position: absolute;left: 5px;top: 115px;width: 186px;color: #90909f;}
+.personal-l-btm li p{line-height: 20px;font-size: 13px;color: #555555;}
+.personal-l-btm li p:hover{color:red;}
+.personal-l-btm li strong{padding-left: 17px;background: url(../img/youku/personal-icon1.png) no-repeat;}
+.personal-l-btm li b{font-weight: normal;padding-left: 17px;background: url(../img/youku/personal-icon2.png) no-repeat;}
+
+.personal-r{margin-top: 50px;}
+.personal-r1{width: 188px;height: 167px;background: #f5f5f5;padding-left: 10px;padding-top: 23px;}
+.personal-r1 h3{font-size: 18px;margin-bottom: 13px;}
+.personal-r1 i{display: block;margin-left: 4px;background:url(../img/youku/personal-r-1.png) no-repeat; width: 180px;height: 21px;margin-top: 14px;margin-bottom: 20px;}
+.personal-r1 h6{margin-bottom: 7px;}
+.personal-r1 input{width: 180px;height: 35px;background: #06a7e1;line-height: 35px;text-align: center;color: white;}
+.personal-r2{width: 65px;height: 127px;margin-left: 20px;background: #f5f5f5;padding-top: 63px;padding-left: 25px;}
+.personal-r2 a{display: block;font-size: 18px;width: 40px;color: #555555;}
+
+/*original*/
+.original{padding-top: 46px;height: 370px;}
+.original-l-top>div{margin-bottom: 20px;}
+.original-l-top>div>span{width: 120px;height:30px;float:left; line-height: 30px;text-align: center;color: #555555;cursor:pointer;}
+.original-l-top>div>span.on{color: white;background: #06a7e1;}
+
+.original-tab{float:left;width: 200px;height: 190px;background: white;position: relative;margin-right: 20px;}
+.original-tab img{position: absolute;left: 0;top: 20px;}
+.original-tab>a>span{position: absolute;right: 5px;top: 115px;color: white;font-weight: bold;}
+.original-tab-btm{position: absolute;left: 5px;top: 135px;width: 186px;color: #90909f;}
+.original-tab-btm p{line-height: 20px;font-size: 13px;color: #555555;}
+.original-tab-btm p:hover{color: red;}
+.original-tab-btm strong{padding-left: 17px;background: url(../img/youku/personal-icon1.png) no-repeat;}
+.original-tab-btm b{font-weight: normal;padding-left: 17px;background: url(../img/youku/personal-icon2.png) no-repeat;}
+
+.original-tab-top{position: absolute;left: 0;top: 0;height: 41px;width:200px; z-index: 7;}
+.original-tab-top i{background: url(../img/youku/original-tab-youku.png) no-repeat;width: 41px;height: 41px;}
+.original-tab-top em{font-style: normal;padding-left: 4px;font-size: 14px;color: #06a7e1;}
+.original-tab-top span{color: #90909f;}
+
+
+
+
+.youku-tab{float:left;width: 200px;height: 190px;background: #f5f5f5;position: relative;margin-right: 20px;}
+.youku-tab img{position: absolute;left: 0;top: 0;}
+.youku-tab span{position: absolute;left: 5px;top: 95px;color: white;font-weight: bold;}
+.youku-tab div{position: absolute;left: 5px;top: 115px;width: 186px;color: #90909f;}
+.youku-tab div p{line-height: 20px;font-size: 13px;color: #555555;}
+.youku-tab div p:hover{color: red;}
+.youku-tab div h6{margin-top: 12px;margin-bottom: 12px;}
+.youku-tab div strong{padding-left: 17px;background: url(../img/youku/personal-icon1.png) no-repeat;}
+.youku-tab div b{font-weight: normal;padding-left: 17px;background: url(../img/youku/personal-icon2.png) no-repeat;}
+.original-l-top ul{display: none;}
+.original-l-top ul.show{display: block;}
+.original-l-btm{width: 640px;height: 110px;margin-top: 20px;}
+.original-l-btm iframe{width: 100%;height: 100%;background: #eee;}
+.original-r{padding-top: 44px;}
+.original-r li{margin-bottom: 19px;}
+.original-r li div{font-size: 12px;padding-left: 10px;}
+.original-r li h6{color: #555555;}
+.original-r li h6:hover{color: red;}
+.original-r li p{color: #909090;margin-top: 9px;}
+
+/*tvplay*/
+.tvplay{height: 440px;padding-top: 50px;}
+.tvplay-l{height: 100%;}
+.tvplay-l-t{margin-bottom: 20px;height: 30px;}
+.tvplay-l-t h2{font-size: 24px;margin-right: 20px;}
+.tvplay-l-t span{width:48px;height:30px;float:left;line-height: 30px;text-align: center;font-size: 12px;background: white;cursor:pointer;}
+.tvplay-l-t span.on{background: #06a7e1;color:white;}
+.tvplay-l-btm{height: 370px;}
+.tvplay-l-btm-bigpic{height: 240px;width: 660px;}
+.tvplay-bigpic{position: relative;width: 420px;height: 240px;margin-right: 20px;}
+.tvplay-bigpic img{position: absolute;left: 0;top: 0;}
+.tvplay-bigpic-pos{width: 415px;height: 42px;padding-left: 5px;color: white;}
+.tvplay-bigpic-pos{position: absolute;left: 0;bottom: 10px;}
+.tvplay-bigpic-pos p{font-size: 15px;margin-bottom: 7px;}
+.tvplay-bigpic-pos i{display: block;font-style: normal;color: #909090;}
+.tvplay-bigpic-pos span{margin-right:5px;color: #909090; }
+.tvplaybtm>div{display: none;}
+.tvplaybtm div.show{display: block;}
+.tvplay-l-btm-bigpic ul{width: 220px;}
+.tvplay-l-btm-smallpic ul{width: 660px;}
+.tvplay-l-btm li{position: relative;width: 200px;height: 110px;margin-right: 20px;margin-bottom: 20px;}
+.tvplay-l-btm img{position: absolute;left: 0;top: 0;}
+.tvplay-small-hide p{position: absolute;left: 0;bottom: 5px;text-indent: 2px;color: #f1f1f1;}
+.tvplay-small-hide h4{position: absolute;left: 0;top: 75px;text-indent: 2px;font-weight: bold;color: #f1f1f1;}
+.tvplay-small-hide span{position: absolute;right: 0;bottom: 5px;color: #f1f1f1;padding-right: 5px;}
+.tvplay-small-hide b{position: absolute;left: 0;top: 0px;background: url(../img/youku/dujia-icon.png) no-repeat;width: 43px;height: 43px;}
+.tvplay-smallpic-pos b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 200px;height: 110px;}
+.tvplay-pos2 {position: absolute;left: 0;top: 0;width: 190px;height: 80px;padding: 15px 5px;font-size: 12px;}
+.tvplay-pos2 a{color:white;}
+.tvplay-pos2 h5{margin-bottom: 9px;}
+.tvplay-pos2 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;}
+.tvplay-pos2 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.tvplay-pos2 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.tvplay-pos2 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;}
+.tvplay-l-btm li .tvplay-smallpic-pos{display: none;}
+.tvplay-l-btm li.show .tvplay-smallpic-pos{display: block;}
+.banner-l li .tvplay-small-hide{display: block;}
+.tvplay-l-btm li.show .tvplay-small-hide{display:none;}
+.tvplay-l-btm-smallpic li{float:left;}
+.tvplay-bigpic-pos b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 420px;height: 120px;}
+.tvplay-bigpic-pos2 {position: absolute;left: 0;top: 120px;width: 420px;height: 120px;padding: 15px 5px;font-size: 12px;display: none;}
+.tvplay-bigpic-pos3 a{color:white;}
+.tvplay-bigpic-pos3 h5{margin-bottom: 9px;font-size: 20px;}
+.tvplay-bigpic-pos3 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;padding-right: 16px;}
+.tvplay-bigpic-pos3 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.tvplay-bigpic-pos3 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.tvplay-bigpic-pos3 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;margin-right: 16px;}
+
+.tvplay-l-btm-bigpic.show .tvplay-bigpic-pos{display: none;}
+.tvplay-l-btm-bigpic.show .tvplay-bigpic-pos2{display: block;}
+.tvplay-l-t a{margin-left: 150px;margin-top: 12px;}
+.tvplay-r{width: 310px;}
+.tvplay-r-top{width: 100%;}
+.tvplay-r-top div span{float:left;padding: 0 10px;text-align: center;line-height: 30px;height: 30px;cursor:pointer;}
+.tvplay-r-top div span.on{background: #06a7e1;color: white;}
+.tvplay-r-top ul{width: 310px;height: 150px;margin-top: 20px;display: none;}
+.tvplay-r-top ul.show{display: block;}
+.tvplay-r-top li{width: 155px;height: 18px;margin-bottom: 10px;float: left;}
+.tvplay-r-top li i{font-style:normal;display: inline-block;color:white;width: 20px;height: 20px;background:#06a7e1;margin-right: 10px;line-height: 20px;text-align: center;}
+.tvplay-r-top li i.red{background: red;}
+.tvplay-r-top li b{font-weight: normal;}
+.tvplay-r-top li b:hover{color: red;}
+.tvplay-r-btm{width: 310px;height: 110px;position: relative;background: red;margin-top: 110px;}
+.tvplay-r-btm iframe{width: 310px;height: 110px;position: absolute;left: 0;top: 0;background:#eee;}
+.tvplay-r-btm i{position: absolute;width: 62px;height: 110px;right: 0;top: 50%;margin-top: -55px;background: url(../img/youku/tvplay-bg.png) repeat-y;}
+.tvplay-r-btm b{background: url(../img/youku/gt-icon.png) no-repeat;position: absolute;right: 12px;top:40px;width: 19px;height: 33px; }
+/*korea*/
+
+.korea-l h3{font-size: 26px;margin-bottom: 20px;}
+.korea-l ul{width: 660px;}
+.korea-l li{float:left;position: relative;width: 200px;height: 110px;margin-right: 20px;}
+.korea-l img{position: absolute;left: 0;top: 0;}
+.korea-l-hide p{position: absolute;left: 0;bottom: 5px;text-indent: 2px;color: #f1f1f1;}
+.korea-l-hide h4{position: absolute;left: 0;top: 75px;text-indent: 2px;font-weight: bold;color: #f1f1f1;}
+.korea-l-hide span{position: absolute;right: 0;bottom: 5px;color: #f1f1f1;padding-right: 5px;}
+.korea-l-hide b{position: absolute;left: 0;top: 0px;background: url(../img/youku/dujia-icon.png) no-repeat;width: 43px;height: 43px;}
+.korea-l-pos1 b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 200px;height: 110px;}
+.korea-l-pos2 {position: absolute;left: 0;top: 0;width: 190px;height: 80px;padding: 15px 5px;font-size: 12px;}
+.korea-l-pos2 a{color:white;}
+.korea-l-pos2 h5{margin-bottom: 9px;}
+.korea-l-pos2 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;}
+.korea-l-pos2 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.korea-l-pos2 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.korea-l-pos2 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;}
+.korea-l li .korea-l-hide{display: block;}
+.korea-l li.show .korea-l-hide{display: none;}
+.korea-l li .korea-l-pos1{display: none;}
+.korea-l li.show .korea-l-pos1{display:block;}
+.korea-r{width: 310px;}
+.korea-r div span{float:left;padding: 0 10px;text-align: center;line-height: 30px;height: 30px;cursor:pointer;}
+.korea-r div span.on{background: #06a7e1;color: white;}
+
+.korea-r ul{width: 310px;height: 150px;margin-top: 20px;display: none;}
+.korea-r ul.show{display: block;}
+.korea-r li{width: 155px;height: 18px;margin-bottom: 10px;float: left;}
+.korea-r li i{font-style:normal;display: inline-block;color:white;width: 20px;height: 20px;background:#06a7e1;margin-right: 10px;line-height: 20px;text-align: center;}
+.korea-r li i.red{background: red;}
+.korea-r li b{font-weight: normal;}
+.korea-r li b:hover{color: red;}
+
+/*film*/
+.film{height: 310px;padding-top: 80px;}
+.film-l{height: 100%;}
+.film-l-t{margin-bottom: 20px;height: 30px;}
+.film-l-t h2{/*padding-top:3px;*/font-size: 24px;margin-right: 20px;}
+.film-l-t span{width:48px;height:30px;float:left;line-height: 30px;text-align: center;font-size: 12px;background: white;cursor:pointer;}
+.film-l-t span.on{background: #06a7e1;color:white;}
+
+.film-l-btm{height: 370px;}
+.film-l-btm-bigpic{height: 240px;width: 660px;display:none;}
+.film-l-btm-bigpic.show{display: block;}
+.film-bigpic{position: relative;width: 420px;height: 240px;margin-right: 20px;}
+.film-bigpic img{position: absolute;left: 0;top: 0;}
+.film-bigpic-pos{width: 415px;height: 42px;padding-left: 5px;color: white;}
+.film-bigpic-pos{position: absolute;left: 0;bottom: 10px;}
+.film-bigpic-pos p{font-size: 15px;margin-bottom: 7px;}
+.film-bigpic-pos i{display: block;font-style: normal;color: #909090;}
+.film-bigpic-pos span{margin-right:5px;color: #909090; }
+
+.film-l-btm-bigpic ul{width: 220px;}
+
+.film-l-btm-bigpic li{position: relative;width: 200px;height: 110px;margin-right: 20px;margin-bottom: 20px;}
+.film-bigpic img{position: absolute;left: 0;top: 0;}
+.film-small-hide p{position: absolute;left: 0;bottom: 5px;text-indent: 2px;color: #f1f1f1;}
+.film-small-hide h4{position: absolute;left: 0;top: 75px;text-indent: 2px;font-weight: bold;color: #f1f1f1;}
+.film-small-hide span{position: absolute;right: 0;bottom: 5px;color: #f1f1f1;padding-right: 5px;}
+.film-small-hide b{position: absolute;left: 0;top: 0px;background: url(../img/youku/dujia-icon.png) no-repeat;width: 43px;height: 43px;}
+.film-smallpic-pos b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 200px;height: 110px;}
+.film-pos2 {position: absolute;left: 0;top: 0;width: 190px;height: 80px;padding: 15px 5px;font-size: 12px;}
+.film-pos2 a{color:white;}
+.film-pos2 h5{margin-bottom: 9px;}
+.film-pos2 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;}
+.film-pos2 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.film-pos2 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.film-pos2 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;}
+
+.film-l-btm li .film-smallpic-pos{display: none;}
+.film-l-btm li.show .film-smallpic-pos{display: block;}
+.film-l-btm li .film-small-hide{display: block;}
+.film-l-btm li.show .film-small-hide{display:none;}
+.film-bigpic-pos b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 420px;height: 120px;}
+.film-bigpic-pos2 {position: absolute;left: 0;top: 120px;width: 420px;height: 120px;padding: 15px 5px;font-size: 12px;display: none;}
+.film-bigpic-pos3 a{color:white;}
+.film-bigpic-pos3 h5{margin-bottom: 9px;font-size: 20px;}
+.film-bigpic-pos3 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;padding-right: 16px;}
+.film-bigpic-pos3 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.film-bigpic-pos3 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.film-bigpic-pos3 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;margin-right: 16px;}
+.film-bigpic.show .film-bigpic-pos{display: none;}
+.film-bigpic.show .film-bigpic-pos2{display: block;}
+.film-r{width: 310px;}
+.film-r-top{width: 100%;}
+.film-r-top div span{float:left;padding: 0 10px;text-align: center;line-height: 30px;height: 30px;cursor:pointer;}
+.film-r-top div span.on{background: #06a7e1;color: white;}
+
+.film-r-top ul{width: 310px;height: 150px;margin-top: 20px;display: none;}
+.film-r-top ul.show{display: block;}
+.film-r-top li{width: 155px;height: 18px;margin-bottom: 10px;float: left;}
+.film-r-top li i{font-style:normal;display: inline-block;color:white;width: 20px;height: 20px;background:#06a7e1;margin-right: 10px;line-height: 20px;text-align: center;}
+.film-r-top li i.red{background: red;}
+.film-r-top li b{font-weight: normal;}
+.film-r-top li b:hover{color: red;}
+.film-r-btm{width: 310px;height: 48px;position: relative;background: #eee;margin-top: 40px;}
+.film-r-btm iframe{width: 310px;height: 48px;position: absolute;left: 0;top: 0;}
+
+
+/*member*/
+.member{height: 160px;padding-top: 80px;}
+.member-l{height: 100%;}
+.member-l-t{margin-bottom: 20px;height: 30px;}
+.member-l-t h2{font-size: 24px;margin-right: 20px;}
+.member-l-t span{padding:0 10px;height:30px;float:left;line-height: 30px;text-align: center;font-size: 12px;background: white;cursor:pointer;}
+.member-l-t span.on{background: #06a7e1;color:white;}
+
+.member-l ul{width: 660px;}
+.member-l li{float:left;position: relative;width: 200px;height: 110px;margin-right: 20px;}
+.member-l img{position: absolute;left: 0;top: 0;}
+.member-l-hide p{position: absolute;left: 0;bottom: 5px;text-indent: 2px;color: #f1f1f1;}
+.member-l-hide h4{position: absolute;left: 0;top: 75px;text-indent: 2px;font-weight: bold;color: #f1f1f1;}
+.member-l-hide span{position: absolute;right: 0;bottom: 5px;color: #f1f1f1;padding-right: 5px;}
+.member-l-hide b{position: absolute;left: 0;top: 0px;background: url(../img/youku/member-icon.png) no-repeat;width: 43px;height: 43px;}
+.member-l-pos1 b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 200px;height: 110px;}
+.member-l-pos2 {position: absolute;left: 0;top: 0;width: 190px;height: 80px;padding: 15px 5px;font-size: 12px;}
+.member-l-pos2 a{color:white;}
+.member-l-pos2 h5{margin-bottom: 9px;}
+.member-l-pos2 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;}
+.member-l-pos2 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.member-l-pos2 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.member-l-pos2 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;}
+.member-l li .member-l-hide{display: block;}
+.member-l li.show .member-l-hide{display: none;}
+
+.member-l li .member-l-pos1{display: none;}
+.member-l li.show .member-l-pos1{display:block;}
+
+.member-l ul{display: none;}
+.member-l ul.show{display: block;}
+
+.member-r{width: 310px;height: 160px;overflow: hidden;}
+.member-r h3{width: 76px;height: 30px;background: #06a7e1;color: white;text-align: center;line-height: 30px;}
+.member-r ul{width: 340px;margin-top: 20px;}
+.member-r li{float:left;margin-right: 20px;width: 145px;height: 110px;background: #f5f5f5;}
+.member-r li p{text-align: center;line-height: 30px;}
+
+
+/*amuse*/
+.amuse{height: 420px;padding-top: 50px;}
+.amuse-l{height: 100%;}
+.amuse-l-t{margin-bottom: 20px;height: 30px;}
+.amuse-l-t h2{font-size: 24px;margin-right: 20px;}
+.amuse-l-t span{padding:0 10px;height:30px;float:left;line-height: 30px;text-align: center;font-size: 12px;background: white;cursor:pointer;}
+.amuse-l-t span.on{background: #06a7e1;color:white;}
+.amuse-l-btm{height: 260px;}
+.amuse-l-btm-bigpic{height: 240px;width: 660px;}
+.amuse-bigpic.show .amuse-bigpic-pos2{display: block;}
+.amuse-bigpic.show .amuse-bigpic-pos{display: none;}
+.amuse-l-btm-bigpic{display: none;}
+.amuse-l-btm-bigpic.show{display: block;}
+.amuse-bigpic{position: relative;width: 420px;height: 240px;margin-right: 20px;}
+.amuse-bigpic img{position: absolute;left: 0;top: 0;}
+.amuse-bigpic-pos{width: 415px;height: 42px;padding-left: 5px;color: white;}
+.amuse-bigpic-pos{position: absolute;left: 0;bottom: 10px;}
+.amuse-bigpic-pos p{font-size: 15px;margin-bottom: 7px;}
+.amuse-bigpic-pos i{display: block;font-style: normal;color: #909090;}
+.amuse-bigpic-pos span{margin-right:5px;color: #909090; }
+
+.amuse-l-btm-bigpic ul{width: 220px;}
+.amuse-l-btm li{position: relative;width: 200px;height: 110px;margin-right: 20px;margin-bottom: 20px;}
+.amuse-l-btm img{position: absolute;left: 0;top: 0;}
+
+.amuse-smallpic-pos b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 200px;height: 110px;}
+.amuse-bigpic-pos b{position: absolute;left: 0;top: 0;background: black;opacity:0.5;width: 420px;height: 120px;}
+.amuse-bigpic-pos2 {position: absolute;left: 0;top: 120px;width: 420px;height: 120px;padding: 15px 5px;font-size: 12px;display: none;}
+.amuse-bigpic-pos3 a{color:white;}
+.amuse-bigpic-pos3 h5{margin-bottom: 9px;font-size: 20px;}
+.amuse-bigpic-pos3 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;padding-right: 16px;}
+.amuse-bigpic-pos3 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.amuse-bigpic-pos3 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.amuse-bigpic-pos3 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;margin-right: 16px;}
+
+.amuse-l-btm li .amuse-smallpic-pos{display: none;}
+.amuse-l-btm li.show .amuse-smallpic-pos{display: block;}
+.amuse-pos2 {position: absolute;left: 0;top: 0;width: 190px;height: 80px;padding: 15px 5px;font-size: 12px;}
+.amuse-pos2 a{color:white;}
+.amuse-pos2 h5{margin-bottom: 9px;}
+.amuse-pos2 .commt i{font-style: normal;padding-left: 16px;background: url(../img/youku/banner-bigpic-icon2.png) no-repeat;}
+.amuse-pos2 h6{padding-left: 16px;background: url(../img/youku/banner-bigpic-icon1.png) no-repeat;margin-top: 7px;margin-bottom: 7px;}
+.amuse-pos2 .btn .play{width: 56px;height: 26px;background: url(../img/youku/banner-btn-play.png) no-repeat;}
+.amuse-pos2 .btn .vedioload{width: 21px;height: 21px;background: url(../img/youku/banner-btn-load.png) no-repeat;margin-top: 3px;}
+.amuse-small-hide p{position: absolute;left: 0;bottom: 5px;text-indent: 2px;color: #f1f1f1;}
+.amuse-small-hide h4{position: absolute;left: 0;top: 75px;text-indent: 2px;font-weight: bold;color: #f1f1f1;}
+.amuse-small-hide span{position: absolute;right: 0;bottom: 5px;color: #f1f1f1;padding-right: 5px;}
+.amuse-small-hide b{position: absolute;left: 0;top: 0px;background: url(../img/youku/dujia-icon.png) no-repeat;width: 43px;height: 43px;}
+
+.amuse-l-btm li .amuse-small-hide{display: block;}
+.amuse-l-btm li.show .amuse-small-hide{display:none;}
+
+.amuse-l-banner iframe{width: 640px;height: 110px;background: #eee;}
+
+
+.amuse-r{width: 310px;}
+.amuse-r-top{width: 100%;}
+.amuse-r-top div span{float:left;padding: 0 10px;text-align: center;line-height: 30px;height: 30px;cursor:pointer;}
+.amuse-r-top div span.on{background: #06a7e1;color: white;}
+
+.amuse-r-top ul{width: 310px;height: 210px;margin-top: 20px;display: none;}
+.amuse-r-top ul.show{display: block;}
+.amuse-r-top li{width: 310px;height: 18px;margin-bottom: 10px;overflow: hidden;}
+.amuse-r-top li i{font-style:normal;float:left;color:white;width: 20px;height: 20px;background:#06a7e1;margin-right: 10px;line-height: 20px;text-align: center;}
+.amuse-r-top li i.red{background: red;}
+.amuse-r-top li b{font-weight: normal;float:left;}
+.amuse-r-top li b:hover{color: red;}
+.amuse-r-top li span{float:right;color: #909090 }
+.amuse-r-btm{width: 310px;height: 110px;position: relative;background: #eee;margin-top: 50px;}
+.amuse-r-btm iframe{width: 310px;height: 110px;position: absolute;left: 0;top: 0;}
+
+
+
+
+
+/*fun*/
+.fun{height: 450px;padding-top: 50px;}
+.fun-l{height: 100%;}
+.fun-l-t{margin-bottom: 20px;height: 30px;}
+.fun-l-t h2{font-size: 24px;margin-right: 20px;}
+.fun-l-t span{padding:0 10px;height:30px;float:left;line-height: 30px;text-align: center;font-size: 12px;background: white;cursor:pointer;}
+.fun-l-t span.on{background: #06a7e1;color:white;}
+
+.fun-tab{float:left;width: 200px;height: 190px;background: #f5f5f5;position: relative;margin-right: 20px;margin-bottom: 20px;}
+.fun-tab img{position: absolute;left: 0;top: 20px;}
+.fun-tab>a>span{position: absolute;right: 5px;top: 115px;color: white;font-weight: bold;}
+.fun-tab-btm{position: absolute;left: 5px;top: 135px;width: 186px;color: #90909f;}
+.fun-tab-btm p{line-height: 20px;font-size: 13px;color: #555555;}
+.fun-tab-btm p:hover{color: red;}
+.fun-tab-btm strong{padding-left: 17px;background: url(../img/youku/personal-icon1.png) no-repeat;}
+.fun-tab-btm b{font-weight: normal;padding-left: 17px;background: url(../img/youku/personal-icon2.png) no-repeat;}
+
+.fun-tab-top{position: absolute;left: 0;top: 0;height: 41px;width:200px; z-index: 7;}
+.fun-tab-top i{background: url(../img/youku/original-tab-youku.png) no-repeat;width: 41px;height: 41px;}
+.fun-tab-top em{font-style: normal;padding-left: 4px;font-size: 14px;color: #06a7e1;}
+.fun-tab-top span{color: #90909f;}
+.fun-l-btm ul{display: none;width: 660px;}
+.fun-l-btm ul.show{display: block;}
+
+.fun-r{padding-top: 50px;}
+.fun-r li{margin-bottom: 20px;}
+.fun-r li div{font-size: 12px;padding-left: 10px;}
+.fun-r li h6{color: #555555;}
+.fun-r li h6:hover{color: red;}
+.fun-r li p{color: #909090;margin-top: 9px;}
+
+/*sport*/
+.sport{height: 238px;padding-top: 50px;}
+.sport-l{height: 100%;}
+.sport-l-t{margin-bottom: 22px;height: 26px;}
+.sport-l-t h2{font-size: 26px;}
+
+.sport-l-btm ul{width: 660px;height: 190px;overflow: hidden;margin-bottom: 20px;}
+.sport-l-btm li{float:left;width: 200px;height: 190px;background: #f5f5f5;position: relative;margin-right: 20px;}
+.sport-l-btm li img{position: absolute;left: 0;top: 0;}
+.sport-l-btm li span{position: absolute;right: 5px;top: 95px;color: white;font-weight: bold;}
+.sport-l-btm li div{position: absolute;left: 5px;top: 122px;width: 186px;color: #90909f;}
+.sport-l-btm li p{line-height: 20px;font-size: 13px;color: #555555;margin-bottom: 10px;}
+.sport-l-btm li p:hover{color:red;}
+.sport-l-btm li strong{padding-left: 17px;background: url(../img/youku/personal-icon1.png) no-repeat;}
+.sport-l-btm li b{font-weight: normal;padding-left: 17px;background: url(../img/youku/personal-icon2.png) no-repeat;}
+
+.sport-r {margin-top: 48px;}
+.sport-r li{margin-bottom: 20px;}
+.sport-r li div{font-size: 12px;padding-left: 10px;}
+.sport-r li h6{color: #555555;margin-top: 5px;}
+.sport-r h6:hover{color: red;}
+
+
+
+
+

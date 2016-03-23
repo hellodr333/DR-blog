@@ -51,6 +51,8 @@ function move(obj,json,optional){
 		}
 	},30)
 }
+
+
 window.onload=window.onresize=function(){
 	var H=document.documentElement.clientHeight;
 	var oBox=document.getElementById('box');
@@ -121,12 +123,6 @@ window.onload=window.onresize=function(){
 	}	
 
 
-
-
-
-
-
-
 	//section1
 	var oW=document.documentElement.clientWidth;
 	var oImgBody=document.getElementById('imgBody');
@@ -173,14 +169,6 @@ window.onload=window.onresize=function(){
 		if(iNow==aImgHeadLi.length) iNow=0;
 		tabSection1();
 	}
-	// var timer=setInterval(next,2000);
-	// oPrev.onmouseover=oNext.onmouseover=function(){
-	// 	clearInterval(timer);
-	// }
-	// oPrev.onmouseout=oNext.onmouseout=function(){
-	// 	timer=setInterval(next,2000);
-	// }
-
 	var oListOne=document.getElementById('listOne');
 	var oListLi=oListOne.getElementsByTagName('li');
 	for(var i=0;i<oListLi.length;i++){
@@ -194,14 +182,11 @@ window.onload=window.onresize=function(){
 		}
 	}
 
-	//var oListTwo=document.getElementById('listTwo');
-	// alert(aImgBodyLi[0].offsetWidth)
-	// alert(oImgBody.offsetLeft)
 		var oListTwoTxt=document.getElementById('listTwoTxt');
-		var str="智能社就是前端开发培训,北京最具深度和口碑的JavaScript、HTML5培训，专注于让学员获得快乐的学习体验并找到高薪工作的培训";
-		for(var i=0;i<str.length;i++){
+		var str="亚瑟说：'地球到底还在不在呢？我花了那么就寻找地球，找到的星球都有点像,但又不完全像。最糟的一个叫这他妈星,当地的坏脾气小动物还咬了我一口。。。。。'"
+		for(var a=0;a<str.length;a++){
 			var oSpan=document.createElement('span');
-			oSpan.innerHTML=str[i];
+			oSpan.innerHTML=str[a];
 			oListTwoTxt.appendChild(oSpan);
 		}
 		var j=0;
@@ -246,23 +231,6 @@ window.onload=window.onresize=function(){
 	var oSkinList=document.getElementById('skinList');
 	var aSkinImg=oSkinList.getElementsByTagName('img');
 	var oSection2=oBox.children[1];
-
-	var z=1;
-	for(var i=0;i<aSkinImg.length;i++){
-		aSkinImg[i].onmouseover=function(){
-			this.style.zIndex=z++;
-			//move(this,{'width':'200'})
-			this.style.width="200px";
-			this.style.marginTop="-60px"
-			this.style.marginLeft="-40px"
-		}
-		aSkinImg[i].onmouseout=function(){
-			this.style.marginTop='0';
-			this.style.marginLeft=""
-			this.style.width="120px";
-		}
-		
-	}
 	for(var i=0;i<aSkinImg.length;i++){
 		aSkinImg[i].index=i;
 		aSkinImg[i].onclick=function(){
@@ -350,6 +318,48 @@ window.onload=window.onresize=function(){
 		oLi.innerHTML=cont;
 		oSearchList.appendChild(oLi)
 	}
+
+	var oChangeSkin=document.getElementById('changeSkin');
+	var oSkin=document.getElementById('skin');
+	var oCloseBtn=document.getElementById('closeBtn');
+	var oDefaultSkin=document.getElementById('defaultSkin');
+	oChangeSkin.onclick=function(){
+		oChangeSkin.style.display='none';
+		oChangeSkin.style.transition="0.2s all ease";
+		oSkin.style.opacity='0.8';
+		oSkin.style.transition="0.2s all ease";
+	}
+	oCloseBtn.onclick=function(){
+		oChangeSkin.style.display='block';
+		oChangeSkin.innerHTML="还是可以点我换肤哦~"
+		oSkin.style.opacity='0';
+		oSkin.style.transition="0.2s all ease";
+	}
+
+	//透明度调节
+	var oScaleBtn=document.getElementById('scaleBtn');
+	var oScaleBox=document.getElementById('scaleBox');
+	oScaleBtn.onmousedown=function(ev){
+		var oEvt=ev || event;
+		var disX=oEvt.clientX-oScaleBtn.offsetLeft;
+		document.onmousemove=function(ev){
+			var oEvt=ev || event;
+			var l=oEvt.clientX-disX;
+			if(l<0) l=0;
+			if(l>oScaleBox.offsetWidth-oScaleBtn.offsetWidth) l=oScaleBox.offsetWidth-oScaleBtn.offsetWidth;
+			oScaleBtn.style.left=l+'px';
+			oScaleBtn.parentNode.style.width=l+'px';
+			oSection2.style.opacity=1-(oScaleBtn.offsetLeft/(oScaleBox.offsetWidth-oScaleBtn.offsetWidth));
+		}
+		document.onmouseup=function(){
+			document.onmousemove=document.onmouseup=null;
+			releaseCapture || releaseCapture;
+		}
+		setCapture || setCapture();
+		return false;
+	}
+
+
 }
 
 
