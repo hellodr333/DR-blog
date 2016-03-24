@@ -34,9 +34,9 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .nav li{float:left;margin-right: 25px;height:43px;line-height: 43px;}
 .nav a{font-size: 15px;color:#666666;}
 .nav a:hover{color:#47c732;}
-.banner{height:455px;position: relative;overflow:hidden;}
+.banner{height:455px;position: relative;overflow:hidden;width:1028px;margin:0 auto;}
 .banner-list{width:1920px;height:455px;position:absolute;left:50%;top:0;margin-left: -960px;}
-.banner-list li{width:1920px;height:455px;display:none;}
+.banner-list li{/*width:1920px*/height:455px;display:none;}
 .banner-list img{width:100%;height:100%;}
 .banner-list li.show{display:block;}
 
@@ -44,16 +44,13 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 /*由于banner-list 已经脱离文档流了所以下面的同级元素可以同样用margin-top来设置位置*/
 .banner-pos h3{font-size: 35px;padding-left:20px;}
 .banner-pos p{font-size:16px;padding-left:20px;margin-bottom:5px;}
-.btn{position: relative;width:1370px;padding-left: 3px;}
+.btn{position: relative;/*width:1370px;*/padding-left: 3px;}
 .banner-pos a{width:97px;height:55px;float:left;position:relative;margin-right:16px;}
 .btn img{width:100%;height:100%;}
 .btn i{width:97px;height:55px;position: absolute;left:0;top:0;background: black;opacity:0.5;}
 .btn i:hover{border:3px solid #22ac35;width:91px;height:49px;position: absolute;left:0;top:0;background: none;}
 
 /*top-end*/
-
-
-
 
 /*today-hot-start*/
 .today-hot{height: 340px;padding-top: 40px;}
@@ -62,7 +59,7 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .today-hot-l-hd h2{font-size:32px;}
 
 .today-hot-l-hd div{width: 228px;height:32px;margin-left: 16px;}
-.today-hot-l-hd ul{width: 228px;height:32px;padding-top: 12px;}
+.today-hot-l-hd ul{width: 229px;height:32px;padding-top: 12px;}
 .today-hot-l-list1 a{color:#2b2b2b;float:left;width:30px;height:20px;line-height: 20px;font-size: 14px;padding-right: 13px;padding-left: 13px;border-right: 1px solid #bcbcbc;}
 /*.today-hot-l-list1 a.on{color:#47c732;}*/
 .today-hot-l-list1 a.on{color:#47c732;}
@@ -269,7 +266,7 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .amusement-l-hd h2{font-size:30px;}
 
 .amusement-l-hd div{height:32px;margin-left: 16px;}
-.amusement-l-hd ul{width: 228px;height:32px;padding-top: 12px;}
+.amusement-l-hd ul{width: 229px;height:32px;padding-top: 12px;}
 .amusement-l-list a{float:left;color:#2b2b2b;width:30px;height:20px;line-height: 20px;font-size: 14px;padding-right: 13px;padding-left: 13px;border-right: 1px solid #bcbcbc;}
 .more{margin-top: 15px; margin-left:16px;font-size: 13px;color:#2b2b2b;}
 .more:hover{color:#47c732;}
@@ -340,7 +337,7 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .cartoon-l-hd h2{font-size:30px;}
 
 .cartoon-l-hd div{height:32px;margin-left: 16px;}
-.cartoon-l-hd ul{width: 228px;height:32px;padding-top: 12px;}
+.cartoon-l-hd ul{width: 229px;height:32px;padding-top: 12px;}
 .cartoon-l-list a{float:left;color:#2b2b2b;width:30px;height:20px;line-height: 20px;font-size: 14px;padding-right: 13px;padding-left: 13px;border-right: 1px solid #bcbcbc;}
 .cartoon-l-list a.on{color:#47c732;}
 .more{margin-top: 15px; margin-left:16px;font-size: 13px;color:#2b2b2b;}
@@ -477,6 +474,6 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 
 /*footer start*/
 .footer li{padding:0 9px;border-left:1px solid #666769;float:left;margin-left: -1px;}
-.footer ul{margin:30px auto;width:420px;overflow: hidden;}
+.footer ul{margin:30px auto;width:430px;overflow: hidden;}
 .footer a{display:block;color:#666769;font-size: 12px;}
 .footer p{margin-top:40px;margin-bottom:10px;text-align: center;}
