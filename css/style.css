@@ -128,8 +128,8 @@ img, input{border:none;}
 .section4 ul{width: 650px;height: 400px;padding-top:30px;}
 .section4 li{position: relative;margin-left:2px;float: left;width: 200px;height: 140px;border: 1px solid gray;background: #eee;box-shadow: 0 0 5px black;margin-right: 35px;margin-bottom: 50px;}
 .section4 li a{width:100%;height:100%;display: inline-block;}
-.section4 li span{position: absolute;left:-1px;top:-1px;width:202px;height:142px;background:#fc689a;opacity:0;transition:0.5s all ease;box-sizing:border-box;padding:10px;}
-.section4 li:hover span{opacity:1;color:white;}
+.section4 li span{position: absolute;left:-1px;top:-1px;width:202px;height:142px;background:#fc689a;transition:0.5s all ease;box-sizing:border-box;padding:15px;opacity: 0}
+.section4 li:hover span{opacity: 1;color:white;}
 .section4 .right{float: right;width:550px;}
 .section4 h1{height:40px;font-size:28px;text-align: left;}
 .section4 p{width:550px;height:280px;/*border:2px solid gray;*/margin:30px auto;text-align:left;}
