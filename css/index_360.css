@@ -35,9 +35,9 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .nav a{font-size: 15px;color:#666666;}
 .nav a:hover{color:#47c732;}
 .banner{height:455px;position: relative;overflow:hidden;width:1028px;margin:0 auto;}
-.banner-list{width:1920px;height:455px;position:absolute;left:50%;top:0;margin-left: -960px;}
+.banner-list{/*width:1920px;*/height:455px;position:absolute;left:50%;top:0;margin-left: -960px;}
 .banner-list li{/*width:1920px*/height:455px;display:none;}
-.banner-list img{width:100%;height:100%;}
+.banner-list img{width:100%;height:100%;width:1400px;}
 .banner-list li.show{display:block;}
 
 .banner-pos{width:100%;margin-top:320px;position: relative;color:white;overflow: hidden;}                 

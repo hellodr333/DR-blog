@@ -98,7 +98,8 @@ window.onload=function(){
 	tab('amusement-l-list','amusement-l-cont');
 	tab('cartoon-l-list','cartoon-l-cont');
 
-
+	var oBanner_t=document.getElementById('banner_t');
+	oBanner_t.style.width=document.documentElement.clientWidth+'px'
 };
 </script>
 </head>
@@ -156,10 +157,10 @@ window.onload=function(){
 						<li><a href="javascript:;">专题</a></li>
 					</ul>
 		</div>
-		<div class="banner" id="banner_t">
+		<div class="banner" >
 			<ul class="banner-list">
 				<li class="show">
-					<a href="javascript:;"><img src="img/360/banner-1.jpg" alt="" /></a>
+					<a href="javascript:;"><img id="banner_t" src="img/360/banner-1.jpg" alt="" /></a>
 				</li>
 				<li>
 					<a href="javascript:;"><img src="img/360/banner-2.jpg" alt="" /></a>
