@@ -64,7 +64,7 @@ a{color: #555555;}
 /*banner*/
 .banner{padding-top: 20px;}
 .banner-l{width: 660px;}
-.banner-r{width: 310px;height: 370px;}
+.banner-r{width: 310px;height: 370px;background:#eee;}
 .banner-l-t{height: 240px;width: 660px;}
 .banner-l-b{/*height: 130px;*/width: 660px;}
 .banner-l-t .bigpic{margin-right: 20px;position: relative;width: 420px;height: 240px;}

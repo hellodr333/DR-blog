@@ -133,7 +133,7 @@ img, input{border:none;}
 .section4 .right{float: right;width:550px;}
 .section4 h1{height:40px;font-size:28px;text-align: left;}
 .section4 p{width:550px;height:280px;/*border:2px solid gray;*/margin:30px auto;text-align:left;}
-.section4 p span{display: inline-block;line-height: 26px;margin-bottom:30px;}
+.section4 p span{display: inline-block;line-height: 26px;margin-bottom:30px;text-align:left;}
 .section4 p i{width:100%;height:2px;;display: inline-block;background:#fc689a;}
 .section4 p strong{font-size:15px;font-weight: normal}
 
