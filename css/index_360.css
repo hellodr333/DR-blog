@@ -12,7 +12,7 @@ textarea{resize:none;}
 body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 
 /*top-star*/
-.top{background: white;}
+/*.top{background: white;}*/
 .hd{height:45px;border-bottom: 2px solid #23ac3a;line-height:38px;padding-top: 17px;background: white;}
 .hd h1{background: url(../img/360/logo.png) no-repeat;width:150px;height:45px;text-indent: -9999em;}
 
@@ -29,7 +29,7 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .hd-nav-list li{position: relative;}
 .hd-nav-list div{opacity:0;filter:alpha(opacity=0);position: absolute;width:200px;height:150px;border:2px solid #21ac37;right:0;bottom:-164px;z-index: 3;background:white;border-radius: 2%;}
 
-.nav{width:1002px;background: white;}
+.nav{width:1002px;background: #f4f4f4;}
 .nav ul{width:1028px;height:43px;}
 .nav li{float:left;margin-right: 25px;height:43px;line-height: 43px;}
 .nav a{font-size: 15px;color:#666666;}
