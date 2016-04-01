@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <title>车讯网</title>
 <link href="css/index_cheXun.css" rel="stylesheet"/>
-<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
 <script type="text/javascript">
 window.onload=function(){
 	function tab1(id1,id2){
@@ -15,7 +14,7 @@ window.onload=function(){
 		for(var i=0;i<aSpan.length;i++)
 		{	
 			aSpan[i].index=i;
-			aSpan[i].onmouseover=function(){
+			aSpan[i].onclick=function(){
 				for(var j=0;j<aSpan.length;j++)
 				{
 					aSpan[j].className="";
@@ -30,19 +29,6 @@ window.onload=function(){
 	tab1('search_btm','search_btn');
 	tab1('picnews_cont','picnews_btn');
 };
-    var  oList_text=document.getElementById('list_text');
-    var  aLi=oList_text.getElementsByTagName('li');
-    var  aDiv=oList_text.getElementsByTagName('div');
-    var  aH6=oList_text.getElementsByTagName('h6');	
-    for(var i=0;i<aLi.length;i++)
-    { 
-    	ali[i].index=i;
-    	ali[i].onmouseover=function(){
-    		aDiv[this.index].className="show";
-    		aH6[this.index].classN
-    	};  	
-    }
-
 </script>
 </head>
 <body>
@@ -944,8 +930,6 @@ window.onload=function(){
 			</ul>
 		</div>
 	</section>
-
-
 	<section class="contnews wrapper clearFix">
 		<div class="contnews_l fl">
 			<div class="picnews"  id="picnews_cont">
@@ -1176,8 +1160,6 @@ window.onload=function(){
 			</div>
 		</div>
 	</section>
-
-
 	<section class="blockandothers clearFix wrapper">
 		<div class="block fl">
 			<h4 class="clearFix">
@@ -1320,13 +1302,11 @@ window.onload=function(){
 			</ul>
 		</div>
 	</section>
-
 	<section class="banner_pic wrapper">
 		<a href="javascript:;">
 			<img src="img/chexun/banner-pic.jpg" width="960" height="90" alt="" />
 		</a>
 	</section>
-
 	<section class="navbar wrapper">
 		<h4>试驾评测</h4>
 		<p class="clearFix">
@@ -1344,7 +1324,6 @@ window.onload=function(){
 			<a href="javascript:;">车贷</a>
 		</p>
 	</section>
-
 	<section class="drive_test wrapper clearFix">
 		<div class="drive_test_l fl">
 			<div class="drive_test_l_pic">
@@ -1524,13 +1503,11 @@ window.onload=function(){
 			</ul>
 		</div>
 	</section>
-
 	<section class="banner_pic wrapper">
 		<a href="javascript:;">
 			<img src="img/chexun/banner-pic.jpg" width="960" height="90" alt="" />
 		</a>
 	</section>
-
 	<section class="navbar wrapper">
 		<h4>选车导购</h4>
 		<p class="clearFix">
@@ -1548,7 +1525,6 @@ window.onload=function(){
 			<a href="javascript:;">车贷</a>
 		</p>
 	</section>
-
 	<section class="hot_type wrapper">
 		<div class="hot_type_btn">
 			<span>热门车型推荐</span>
@@ -1613,7 +1589,6 @@ window.onload=function(){
 			</li>
 		</ul>
 	</section>
-
 	<section class="car_other wrapper">
 		<div class="carnews fl">
 			<h4 class="clearFix">
@@ -1658,12 +1633,10 @@ window.onload=function(){
 			<img src="img/chexun/map.jpg" width="" height="228" alt="231" />
 		</div>
 	</section>
-
 	<section class="link wrapper">
 		<span>友情链接</span>
 		<a href="javascript:;">更多>></a>
 	</section>
-
 	<section class="wrapper website">
 		<div>
 			<a href="javascript:;">新浪汽车 |</a>
@@ -1704,7 +1677,6 @@ window.onload=function(){
 			<a href="javascript:;">新浪汽车 |</a>
 		</div>	
 	</section>
-
 	<section class="wrapper contactus">
 		<p>
 			<span>车讯网：关于我们</span>  
@@ -1715,7 +1687,6 @@ window.onload=function(){
 			<span>新闻归档</span>
 		</p>
 	</section>
-
 	<footer class="wrapper">
 		<img src="img/chexun/footer.jpg" width="960" height="88" alt="" />
 	</footer>
