@@ -199,33 +199,7 @@ window.onload=window.onresize=function(){
 				}
 		},500)
 
-		// var oElasticUl=document.getElementById('elasticUl');
-		// var aElasticLi=oElasticUl.children;
-		// var speed= 0;
-		// var bottom=200;
-		// function moveElastic(obj,iTarget){
-		// 	clearInterval(obj.timer);
-		// 	var timer=setInterval(function(){
-		// 		speed+=(iTarget-bottom)/5;
-		// 		speed*=0.7;
-		// 		bottom+=speed;
-		// 		obj.style.bottom=Math.round(bottom)+'px';
-		// 		if(obj.style.bottom==iTarget && Math.abs(speed)<1){
-		// 			clearInterval(obj.timer);
-		// 		}
-		// 	},300)
-		// }
 		
-		// for(var a=0;a<aElasticLi.length;a++){
-		// 	aElasticLi[a].onmouseover=function(){
-		// 		moveElastic(this.children[0],0)
-		// 	}
-		// }
-
-
-
-
-
 
 	//section2
 	var oSkinList=document.getElementById('skinList');

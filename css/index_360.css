@@ -34,21 +34,6 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .nav li{float:left;margin-right: 25px;height:43px;line-height: 43px;}
 .nav a{font-size: 15px;color:#666666;}
 .nav a:hover{color:#47c732;}
-.banner{height:455px;position: relative;overflow:hidden;width:1028px;margin:0 auto;}
-.banner-list{/*width:1920px;*/height:455px;position:absolute;left:50%;top:0;margin-left: -960px;}
-.banner-list li{/*width:1920px*/height:455px;display:none;}
-.banner-list img{width:100%;height:100%;width:1400px;}
-.banner-list li.show{display:block;}
-
-.banner-pos{width:100%;margin-top:320px;position: relative;color:white;overflow: hidden;}                 
-/*由于banner-list 已经脱离文档流了所以下面的同级元素可以同样用margin-top来设置位置*/
-.banner-pos h3{font-size: 35px;padding-left:20px;}
-.banner-pos p{font-size:16px;padding-left:20px;margin-bottom:5px;}
-.btn{position: relative;/*width:1370px;*/padding-left: 3px;}
-.banner-pos a{width:97px;height:55px;float:left;position:relative;margin-right:16px;}
-.btn img{width:100%;height:100%;}
-.btn i{width:97px;height:55px;position: absolute;left:0;top:0;background: black;opacity:0.5;}
-.btn i:hover{border:3px solid #22ac35;width:91px;height:49px;position: absolute;left:0;top:0;background: none;}
 
 /*top-end*/
 
@@ -320,8 +305,8 @@ body{font-size: 14px;font-family: "黑体";background:#f4f4f4;}
 .imgtit i{position: absolute;right:0;top:0;font-style: normal;padding-left: 11px;padding-right: 11px;padding-left:22px;background: url(../img/360/tvplay-icon.png) no-repeat 0 7px;}
 .imgtit h6{position: absolute;left:0;top:0;width:240px;height: 24px;background: black;opacity:0.5;}
 .amusement-r .img{display:none;}
-.amusement-r li:hover .img{display:block;}
-.amusement-r li:hover .txt{display:none;}
+.amusement-r .on{display:block;}
+.amusement-r .hide{display:none;}
 
 
 

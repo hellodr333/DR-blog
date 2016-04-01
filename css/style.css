@@ -69,11 +69,11 @@ img, input{border:none;}
 
 /*section2 */
 .box .section2 {background: #fc689a;position: relative;}
-.box .s1{background: url(../img/skin1.jpg) no-repeat; }
-.box .s2{background: url(../img/skin2.jpg) no-repeat;}
-.box .s3{background: url(../img/skin3.jpg) no-repeat;}
-.box .s4{background: url(../img/skin4.jpg) no-repeat;}
-.box .s5{background: url(../img/skin5.jpg) no-repeat;/*background-size:cover;*/}
+.box .s1{background: url(../img/skin2.jpg) no-repeat;background-size:cover;}
+.box .s2{background: url(../img/skin1.jpg) no-repeat;background-size:cover;}
+.box .s3{background: url(../img/skin3.jpg) no-repeat;background-size:cover;}
+.box .s4{background: url(../img/skin4.jpg) no-repeat;background-size:cover;}
+.box .s5{background: url(../img/skin5.jpg) no-repeat;background-size:cover;width:100%;height:100%;}
 
 .section2 .baidu{width: 1200px;height: 300px;margin: 50px auto;position:relative;}
 .logo{width:270px; height:130px; background:url(../img/logo_white.png) left top no-repeat; margin:0 auto 10px auto; position:relative;}
