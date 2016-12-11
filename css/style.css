@@ -11,6 +11,7 @@ img, input{border:none;}
 .clearFix:after{ content:""; display:block; clear:both; }
 .clearFix{zoom:1;}
  body{font-family: "微软雅黑";font-style: 16px;font-size:16px;}
+ .backShade{display:none;}
 .box{width:100%;position: relative;top: 0}
 .box>li{background: url(../img/2nd.png) repeat;overflow: hidden;text-align: center;}
 /*topNav*/
@@ -137,7 +138,9 @@ img, input{border:none;}
 .section4 p i{width:100%;height:2px;;display: inline-block;background:#fc689a;}
 .section4 p strong{font-size:15px;font-weight: normal}
 
-
+@media (max-width: 960px){
+	.backShade{display:block;background:black;width:100%;height:100%;position:fixed;left:0;top:0;z-index:9999999999999;color:white;text-align:center;padding-top:40px;}
+}
 
 
 
